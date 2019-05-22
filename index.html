@@ -7,7 +7,55 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/onhb11_tarefona.css" />
 
-    <meta name="theme-color" content="#fafafa" />
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="js/mustache.min.js"></script>
+
+    <meta name="theme-color" content="#cb0772" />
+
+    <script>
+      var viewUrl = "json/teste_tarefona.json";
+      let templateUrl = "template.mustache";
+
+      jQuery(function($) {
+        var body = $("body");
+
+        $.when(
+          $.get(viewUrl),
+          $.get({ url: templateUrl, dataType: "text" })
+        ).then(function(data, template) {
+          data = data[0];
+          Mustache.parse(template[0]);
+
+          var i,
+            subData = data["PohDoneActivity"]["submitted_data"];
+          for (i in subData) {
+            if (i.match(/^img_/)) {
+              try {
+                subData[i + "_versions"] =
+                  data["PohDoneActivity"]["attachments"][subData[i]].versions;
+              } catch (e) {}
+            } else if (typeof subData[i] === "string") {
+              if (subData[i].length > 0) {
+                subData[i] = subData[i]
+                  .replace(/"([^"]*)"/gm, "“$1”")
+                  .split("\n");
+              } else {
+                delete subData[i];
+              }
+            }
+          }
+
+          data._isDone = function(data) {
+            return this.PohDoneActivity.status === "delivered";
+          };
+
+          var rendered = Mustache.render(template[0], data);
+
+          body.html(rendered);
+          body.show();
+        });
+      });
+    </script>
   </head>
   <body></body>
 </html>
