@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "Gangster Grotesk";
+  src: url("../fonts/GangsterGrotesk/GangsterGrotesk-Bold.woff2")
+      format("woff2"),
+    url("../fonts/GangsterGrotesk/GangsterGrotesk-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gangster Grotesk";
+  src: url("../fonts/GangsterGrotesk/GangsterGrotesk-Regular.woff2")
+      format("woff2"),
+    url("../fonts/GangsterGrotesk/GangsterGrotesk-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Syne";
+  src: url("../fonts/Syne/Syne-Italic.woff2") format("woff2"),
+    url("../fonts/Syne/Syne-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Syne";
+  src: url("../fonts/Syne/Syne-Bold.woff2") format("woff2"),
+    url("../fonts/Syne/Syne-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
