@@ -1,9 +1,14 @@
-@import "01-jeanluc.scss";
+// @import "01-jeanluc.scss";
+@import "02-infini.scss";
 
 body {
   background: #ddd;
-  font-family: "JeanLucWeb-Thin";
-  font-family: "IBM Plex Mono", monospace;
-  font-family: "IBM Plex Serif", serif;
+  // font-family: "JeanLucWeb-Thin";
+  // font-family: "IBM Plex Mono", monospace;
+  // font-family: "IBM Plex Serif", serif;
+
+  font-family: "Infini", sans-serif;
+  font-family: "Yatra One", cursive;
+
   font-size: 40px;
 }
