@@ -1,6 +1,12 @@
 // @import "01-jeanluc.scss";
 // @import "02-infini.scss";
 @import "03-syne.scss";
+$palettes: (
+  /* Sol de sábado */ (rgb(255, 83, 11), rgb(0, 185, 154)),
+  /* Sol de segunda */ (rgb(0, 155, 217), rgb(188, 132, 208)),
+  /* Paisagem celta */ (rgb(0, 173, 123), rgb(255, 84, 80)),
+  /* A Solidão das pedras */ (rgb(162, 103, 135), rgb(85, 143, 162))
+);
 
 body {
   background: #ddd;
@@ -18,6 +24,7 @@ body {
   font-family: "Gangster Grotesk", sans-serif;
   font-weight: normal;
   font-weight: bold;
+  background: nth(nth($palettes, 2), 2);
 
   font-size: 40px;
 }
