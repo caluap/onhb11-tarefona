@@ -59,6 +59,7 @@ img {
   }
 
   $shade: rgba(0, 0, 0, 0.2);
+  $shade: mix(rgba(0, 0, 0, 0.5), $paper);
 
   &:nth-child(odd):after {
     right: 0;
@@ -66,6 +67,7 @@ img {
     border-right: 1px solid mix(black, $shade);
   }
   &:nth-child(even):after {
+    border-left: 1px solid mix(white, $shade);
     left: 0;
     background-image: linear-gradient(to right, $shade, transparent);
   }
