@@ -260,7 +260,7 @@ img {
       columns: 2;
       column-gap: $m;
       p + p {
-        text-indent: $m/2;
+        text-indent: $m/3;
       }
     }
   }
@@ -304,6 +304,14 @@ img {
       }
       .about-the-team {
         grid-column: 3;
+        p {
+          font-family: "IBM Plex Mono", monospace;
+          font-size: 9px;
+          line-height: 13px;
+          & + p {
+            margin-top: $m/3;
+          }
+        }
       }
     }
   }
