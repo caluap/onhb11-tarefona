@@ -125,7 +125,18 @@ img {
       font-weight: normal;
       font-size: 38px;
       line-height: 34px;
-      color: nth(nth($palettes, 1), 1);
+      @at-root .sol-de-sabado & {
+        color: nth(nth($palettes, 1), 1);
+      }
+      @at-root .sol-de-segunda & {
+        color: nth(nth($palettes, 2), 1);
+      }
+      @at-root .paisagem-celta & {
+        color: nth(nth($palettes, 3), 1);
+      }
+      @at-root .a-solidao-das-pedras & {
+        color: nth(nth($palettes, 4), 1);
+      }
       text-transform: uppercase;
 
       box-sizing: border-box;
