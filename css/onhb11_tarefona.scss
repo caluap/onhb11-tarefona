@@ -215,8 +215,23 @@ img {
   }
 
   &#page3 {
-    header img {
-      @extend .sepiaish-img;
+    display: flex;
+    flex-direction: column;
+
+    header {
+      position: relative;
+      h3 {
+        font-family: "JeanLucWeb-Thin", sans-serif;
+        text-transform: uppercase;
+        font-size: 27px;
+        line-height: 29px;
+        color: nth(nth($palettes, 1), 1);
+        position: absolute;
+        z-index: 3;
+      }
+      img {
+        @extend .sepiaish-img;
+      }
     }
   }
 
