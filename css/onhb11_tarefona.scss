@@ -310,7 +310,7 @@ img {
       }
       li {
         position: relative;
-        $b_w: 3px;
+        $b_w: 2px;
         &:before,
         &:after {
           position: absolute;
@@ -319,8 +319,8 @@ img {
         &:before {
           left: calc(-20% + #{$m * 2 / 3 / 2});
           top: 0;
-          bottom: 0;
-          border-left: 3px dotted nth(nth($palettes, 1), 2);
+          bottom: -$b_w * 2;
+          border-left: $b_w dotted nth(nth($palettes, 1), 2);
         }
         &:after {
           background: $paper;
