@@ -81,6 +81,16 @@ img {
   font-family: "IBM Plex Serif", serif;
   font-size: 11px;
 
+  .default-text {
+    font-size: 12px;
+    line-height: 17px;
+  }
+
+  .small-text {
+    font-size: 10px;
+    line-height: 14px;
+  }
+
   &#page1 {
     position: relative;
     overflow: hidden;
@@ -187,11 +197,10 @@ img {
     article {
       p {
         font-family: "IBM Plex Serif", serif;
-        font-size: 11px;
-        line-height: 15px;
+        @extend .default-text;
         font-weight: 500;
         & + p {
-          margin-top: $m/3;
+          text-indent: $m/2;
         }
       }
     }
@@ -207,7 +216,7 @@ img {
     }
     p.caption {
       font-family: "IBM Plex Mono", monospace;
-      font-size: 13px;
+      @extend .default-text;
       color: nth(nth($palettes, 1), 1);
       position: absolute;
       bottom: $m;
@@ -255,8 +264,7 @@ img {
     }
     .uma-vida-um-evento {
       margin: $m;
-      font-size: 11px;
-      line-height: 15px;
+      @extend .default-text;
       columns: 2;
       column-gap: $m;
       p + p {
@@ -273,7 +281,7 @@ img {
       h3 {
         color: nth(nth($palettes, 1), 1);
         font-family: "IBM Plex Mono", monospace;
-        font-size: 10px;
+        @extend .small-text;
       }
       .question {
         font-size: 16px;
@@ -283,8 +291,7 @@ img {
         }
       }
       .answer {
-        font-size: 11px;
-        line-height: 15px;
+        @extend .default-text;
         font-style: italic;
       }
     }
@@ -349,8 +356,7 @@ img {
         grid-column: 3;
         p {
           font-family: "IBM Plex Mono", monospace;
-          font-size: 9px;
-          line-height: 13px;
+          @extend .small-text;
           & + p {
             margin-top: $m/3;
           }
