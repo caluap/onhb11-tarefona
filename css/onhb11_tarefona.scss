@@ -298,8 +298,23 @@ img {
         color: nth(nth($palettes, 1), 1);
         margin-bottom: $m/9;
       }
-      li + li {
-        margin-top: $m/3;
+      li {
+        position: relative;
+        &:before {
+          position: absolute;
+          content: "";
+          $b_w: 3px;
+          width: calc(#{$m * 2 / 3} - #{$b_w});
+          height: calc(#{$m * 2 / 3} - #{$b_w});
+          left: -20%;
+          transform: translateY(-$b_w);
+          border-radius: 50%;
+          border: $b_w solid nth(nth($palettes, 1), 2);
+        }
+
+        & + li {
+          margin-top: $m/3;
+        }
       }
     }
 
