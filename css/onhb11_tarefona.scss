@@ -33,6 +33,36 @@ body {
   font-size: 40px;
 }
 
+@mixin var-color($i) {
+  @at-root .sol-de-sabado & {
+    color: nth(nth($palettes, 1), $i);
+  }
+  @at-root .sol-de-segunda & {
+    color: nth(nth($palettes, 2), $i);
+  }
+  @at-root .paisagem-celta & {
+    color: nth(nth($palettes, 3), $i);
+  }
+  @at-root .a-solidao-das-pedras & {
+    color: nth(nth($palettes, 4), $i);
+  }
+}
+
+@mixin var-bgcolor($i) {
+  @at-root .sol-de-sabado & {
+    background-color: nth(nth($palettes, 1), $i);
+  }
+  @at-root .sol-de-segunda & {
+    background-color: nth(nth($palettes, 2), $i);
+  }
+  @at-root .paisagem-celta & {
+    background-color: nth(nth($palettes, 3), $i);
+  }
+  @at-root .a-solidao-das-pedras & {
+    background-color: nth(nth($palettes, 4), $i);
+  }
+}
+
 img {
   max-width: 100%;
 }
@@ -125,18 +155,7 @@ img {
       font-weight: normal;
       font-size: 38px;
       line-height: 34px;
-      @at-root .sol-de-sabado & {
-        color: nth(nth($palettes, 1), 1);
-      }
-      @at-root .sol-de-segunda & {
-        color: nth(nth($palettes, 2), 1);
-      }
-      @at-root .paisagem-celta & {
-        color: nth(nth($palettes, 3), 1);
-      }
-      @at-root .a-solidao-das-pedras & {
-        color: nth(nth($palettes, 4), 1);
-      }
+      @include var-color(1);
       text-transform: uppercase;
 
       box-sizing: border-box;
@@ -153,7 +172,7 @@ img {
       top: $m;
       width: 50%;
       padding: $m;
-      background: nth(nth($palettes, 1), 2);
+      @include var-bgcolor(2);
       color: white;
       font-style: italic;
       font-size: 23px;
@@ -196,7 +215,7 @@ img {
 
     h3 {
       font-weight: bold;
-      color: nth(nth($palettes, 1), 1);
+      @include var-color(1);
       font-size: 23px;
       line-height: 28px;
     }
@@ -232,7 +251,7 @@ img {
     p.caption {
       font-family: "IBM Plex Mono", monospace;
       @extend .default-text;
-      color: nth(nth($palettes, 1), 1);
+      @include var-color(1);
       position: absolute;
       bottom: $m;
       left: $m;
@@ -248,7 +267,7 @@ img {
       text-transform: uppercase;
       font-size: 27px;
       line-height: 29px;
-      color: nth(nth($palettes, 1), 1);
+      @include var-color(1);
       z-index: 3;
 
       margin-bottom: $m/2;
@@ -297,7 +316,7 @@ img {
     grid-template-columns: 8fr 1fr 6fr;
     .question_answer {
       h3 {
-        color: nth(nth($palettes, 1), 1);
+        @include var-color(1);
         font-family: "IBM Plex Mono", monospace;
         @extend .small-text;
         margin-bottom: $m/9;
@@ -321,7 +340,7 @@ img {
       font-family: "IBM Plex Mono";
       line-height: 13px;
       h3 {
-        color: nth(nth($palettes, 1), 1);
+        @include var-color(1);
         margin-bottom: $m/9;
       }
       li {
@@ -336,7 +355,18 @@ img {
           left: calc(-20% + #{$m * 2 / 3 / 2});
           top: 0;
           bottom: -$b_w * 2;
-          border-left: $b_w dotted nth(nth($palettes, 1), 2);
+          @at-root .sol-de-sabado & {
+            border-left: $b_w dotted nth(nth($palettes, 1), 2);
+          }
+          @at-root .sol-de-segunda & {
+            border-left: $b_w dotted nth(nth($palettes, 2), 2);
+          }
+          @at-root .paisagem-celta & {
+            border-left: $b_w dotted nth(nth($palettes, 3), 2);
+          }
+          @at-root .a-solidao-das-pedras & {
+            border-left: $b_w dotted nth(nth($palettes, 4), 2);
+          }
         }
         &:after {
           background: $paper;
@@ -349,7 +379,19 @@ img {
           transform: translateY(-$b_w);
 
           border-radius: 50%;
-          border: $b_w solid nth(nth($palettes, 1), 2);
+
+          @at-root .sol-de-sabado & {
+            border: $b_w solid nth(nth($palettes, 1), 2);
+          }
+          @at-root .sol-de-segunda & {
+            border: $b_w solid nth(nth($palettes, 2), 2);
+          }
+          @at-root .paisagem-celta & {
+            border: $b_w solid nth(nth($palettes, 3), 2);
+          }
+          @at-root .a-solidao-das-pedras & {
+            border: $b_w solid nth(nth($palettes, 4), 2);
+          }
         }
 
         &:last-child:before {
