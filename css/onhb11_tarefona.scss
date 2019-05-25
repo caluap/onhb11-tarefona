@@ -76,7 +76,9 @@ img {
     left: 0;
     background-image: linear-gradient(to right, $shade, transparent);
   }
+}
 
+.jean-luc {
   // jean luc
   font-family: "IBM Plex Serif", serif;
   font-size: 11px;
@@ -91,7 +93,7 @@ img {
     line-height: 14px;
   }
 
-  &#page1 {
+  #page1 {
     position: relative;
     overflow: hidden;
 
@@ -171,7 +173,7 @@ img {
     }
   }
 
-  &#page2 {
+  #page2 {
     position: relative;
     article {
       position: relative;
@@ -226,7 +228,7 @@ img {
     }
   }
 
-  &#page3 {
+  #page3 {
     display: flex;
     flex-direction: column;
 
@@ -278,7 +280,7 @@ img {
     }
   }
 
-  &#page4 {
+  #page4 {
     padding: $m;
     display: grid;
     grid-template-columns: 8fr 1fr 6fr;
