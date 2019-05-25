@@ -56,9 +56,9 @@ img {
     top: 0;
     bottom: 0;
     mix-blend-mode: multiply;
+    z-index: 10;
   }
 
-  $shade: rgba(0, 0, 0, 0.2);
   $shade: mix(rgba(0, 0, 0, 0.5), $paper);
 
   &:nth-child(odd):after {
