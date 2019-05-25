@@ -284,13 +284,14 @@ img {
         color: nth(nth($palettes, 1), 1);
         font-family: "IBM Plex Mono", monospace;
         @extend .small-text;
+        margin-bottom: $m/9;
+        &:not(:first-child) {
+          margin-top: $m/2;
+        }
       }
       .question {
         font-size: 16px;
         line-height: 21px;
-        & + h3 {
-          margin-top: $m/2;
-        }
       }
       .answer {
         @extend .default-text;
