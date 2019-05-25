@@ -173,9 +173,21 @@ img {
       line-height: 28px;
     }
     h4 {
+      margin-top: $m / 2;
       font-weight: 300;
       font-size: 16px;
       line-height: 21px;
+    }
+    article {
+      p {
+        font-family: "IBM Plex Serif", serif;
+        font-size: 11px;
+        line-height: 15px;
+        font-weight: 500;
+        & + p {
+          margin-top: $m/3;
+        }
+      }
     }
     .map {
       position: absolute;
@@ -195,11 +207,5 @@ img {
       bottom: $m;
       left: $m;
     }
-  }
-  p {
-    font-family: "IBM Plex Serif", serif;
-    font-size: 11px;
-    line-height: 15px;
-    font-weight: 500;
   }
 }
