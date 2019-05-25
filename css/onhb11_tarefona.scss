@@ -42,13 +42,14 @@ img {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: calc(100% - #{2 * $m});
-  max-width: 1280px;
+  max-width: 960px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
 .pages {
   background: $paper;
   position: relative;
+  min-height: calc(480px * 1.4 - #{$m});
   &:after {
     width: $m * 2;
     position: absolute;
