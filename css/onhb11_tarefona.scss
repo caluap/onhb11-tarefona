@@ -267,8 +267,11 @@ img {
     .uma-vida-um-evento {
       margin: $m;
       @extend .default-text;
+      flex-grow: 1;
       columns: 2;
       column-gap: $m;
+      -moz-column-fill: auto; /* Firefox */
+      column-fill: auto;
       p + p {
         text-indent: $m/3;
       }
