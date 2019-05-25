@@ -76,6 +76,32 @@ img {
   font-family: "IBM Plex Serif", serif;
 
   &#page1 {
+    position: relative;
+    overflow: hidden;
+
+    header {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      & > * {
+        z-index: 3;
+      }
+      &:before {
+        position: absolute;
+        content: "";
+        left: 0;
+        right: 50%;
+        bottom: 0;
+        top: 0;
+        background: linear-gradient(to right, rgba(0, 0, 0, 0.4), transparent);
+        mix-blend-mode: multiply;
+        z-index: 2;
+      }
+    }
+
     h1 {
       font-family: "JeanLucWeb-Thin", sans-serif;
       font-weight: normal;
@@ -83,19 +109,48 @@ img {
       line-height: 34px;
       color: nth(nth($palettes, 1), 1);
       text-transform: uppercase;
+
+      box-sizing: border-box;
+      position: absolute;
+      bottom: $m;
+      padding: $m;
+      width: 50%;
+      background: black;
     }
 
     h2 {
+      box-sizing: border-box;
+      position: absolute;
+      top: $m;
+      width: 50%;
+      padding: $m;
+      background: nth(nth($palettes, 1), 2);
+      color: white;
       font-style: italic;
       font-size: 23px;
       line-height: 25px;
       font-weight: bold;
       span {
+        position: absolute;
+        margin-top: $m * 8/5;
+        display: block;
         font-family: "JeanLucWeb-Thin", sans-serif;
         font-weight: normal;
         font-size: 43px;
         font-style: normal;
       }
+    }
+
+    img {
+      filter: grayscale(90%);
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+
+      object-fit: cover;
+      z-index: 1;
     }
   }
 
