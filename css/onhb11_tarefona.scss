@@ -250,6 +250,16 @@ img {
         @extend .sepiaish-img;
       }
     }
+    .uma-vida-um-evento {
+      margin: $m;
+      font-size: 10px;
+      line-height: 15px;
+      columns: 2;
+      column-gap: $m;
+      p + p {
+        text-indent: $m/2;
+      }
+    }
   }
 
   &#page4 {
