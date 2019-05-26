@@ -590,6 +590,37 @@ img {
     }
   }
   #page3 {
+    display: flex;
+    flex-direction: column;
+
+    header {
+      @include img-ratio(51.42334509%);
+    }
+
+    .uma-vida-um-evento {
+      @extend .default-text;
+
+      flex-grow: 1;
+      columns: 2;
+      column-gap: percentage(1/13);
+      -moz-column-fill: auto; /* Firefox */
+      column-fill: auto;
+
+      h3 {
+        @extend .vertical-bar;
+
+        justify-content: center;
+        text-align: center;
+        font-family: "Yatra One", cursive;
+        font-size: 20px;
+        br {
+          display: none;
+        }
+      }
+
+      padding: percentage(1/17);
+      padding-left: percentage(3/17);
+    }
   }
   #page4 {
   }
