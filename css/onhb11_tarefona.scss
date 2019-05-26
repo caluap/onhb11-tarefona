@@ -450,6 +450,13 @@ img {
 .infini {
   font-family: "Infini", sans-serif;
   font-size: 11px;
+
+  .default-text {
+    font-family: "Infini", sans-serif;
+    font-size: 11px;
+    line-height: 15px;
+  }
+
   #page1 {
     position: relative;
     overflow: hidden;
@@ -499,6 +506,84 @@ img {
         float: right;
       }
     }
+  }
+  #page2 {
+    display: grid;
+    padding-top: percentage(1/17);
+    grid-template-columns: 1fr 15fr 1fr;
+    position: relative;
+    article {
+      grid-column: 2;
+      display: grid;
+      grid-template-columns: 6fr 1fr 8fr;
+      position: relative;
+      z-index: 4;
+      padding-bottom: percentage(1/15);
+      header {
+        grid-column: 1;
+        h3 {
+          @include var-color(1);
+          font-family: "Yatra One", cursive;
+          font-size: 24px;
+          line-height: 27px;
+        }
+        h4 {
+          margin-top: $m/2;
+          color: mix($paper, black);
+          font-size: 15px;
+          line-height: 19px;
+        }
+      }
+      .main-text {
+        grid-column: 3;
+        @extend .default-text;
+        p + p {
+          text-indent: $m * 2/3;
+        }
+      }
+    }
+    .map {
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      left: 0;
+      width: percentage(10/17);
+      line-height: 0;
+      img {
+        width: 100%;
+        position: relative;
+        z-index: 2;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        z-index: 3;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: $m * 7;
+        opacity: 0.75;
+        background: linear-gradient(to bottom, transparent, $paper);
+      }
+      .caption {
+        position: absolute;
+        bottom: percentage(1/17);
+        left: percentage(1/17);
+        font-size: 13px;
+        line-height: 16px;
+        color: mix(black, $paper);
+        z-index: 3;
+      }
+    }
+  }
+  #page3 {
+  }
+  #page4 {
+  }
+}
+
+.syne {
+  #page1 {
   }
   #page2 {
   }
