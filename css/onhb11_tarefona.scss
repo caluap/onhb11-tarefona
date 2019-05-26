@@ -623,6 +623,87 @@ img {
     }
   }
   #page4 {
+    display: grid;
+    padding: percentage(1/17) 0 0 0;
+    grid-auto-rows: auto min-content;
+    grid-template-columns: 1fr 6fr 2fr 7fr 1fr;
+    .question_answer {
+      grid-column: 4;
+      grid-row: 1;
+
+      @extend .default-text;
+
+      h3 {
+        font-size: 14px;
+        font-family: "Yatra One", cursive;
+        @include var-color(2);
+        text-transform: uppercase;
+        letter-spacing: 0.07ch;
+        margin-bottom: $m/6;
+      }
+      .question {
+        font-size: 14px;
+        line-height: 18px;
+        font-family: "Yatra One", cursive;
+        & + h3 {
+          margin-top: $m/2;
+        }
+      }
+    }
+    .timeline {
+      $offset: $m * 2/3;
+      grid-column: 2;
+      grid-row: 1;
+      padding-left: $offset;
+      h3 {
+        font-family: "Yatra One", cursive;
+        @include var-color(1);
+        font-size: 14px;
+        position: relative;
+        &:before {
+          content: "→";
+          font-family: "Infini", sans-serif;
+          font-size: 14px;
+          position: absolute;
+          left: -$offset;
+          top: -2px;
+        }
+      }
+      p {
+        margin-top: $m/6;
+        @extend .default-text;
+      }
+      li:not(:first-child) h3 {
+        margin-top: $m/3;
+      }
+    }
+    .the-team {
+      grid-column: 1 / -1;
+      grid-row: 2;
+
+      display: grid;
+      grid-template-columns: 9fr 8fr;
+
+      @include var-bgcolor(2, 0.3);
+
+      img {
+        grid-column: 1;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        @extend .sepiaish-img;
+        mix-blend-mode: multiply;
+      }
+      .about-the-team {
+        grid-column: 2;
+        padding: percentage(1/8);
+        @extend .default-text;
+        p + p {
+          text-indent: 0;
+          margin-top: $m/2;
+        }
+      }
+    }
   }
 }
 
