@@ -669,9 +669,9 @@ img {
           top: -2px;
         }
       }
+      @extend .default-text;
       p {
         margin-top: $m/6;
-        @extend .default-text;
       }
       li:not(:first-child) h3 {
         margin-top: $m/3;
