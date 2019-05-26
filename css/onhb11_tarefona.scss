@@ -33,33 +33,33 @@ body {
   font-size: 40px;
 }
 
-@mixin var-color($i) {
+@mixin var-color($i, $alpha: 1) {
   @at-root .sol-de-sabado & {
-    color: nth(nth($palettes, 1), $i);
+    color: transparentize(nth(nth($palettes, 1), $i), 1-$alpha);
   }
   @at-root .sol-de-segunda & {
-    color: nth(nth($palettes, 2), $i);
+    color: transparentize(nth(nth($palettes, 2), $i), 1-$alpha);
   }
   @at-root .paisagem-celta & {
-    color: nth(nth($palettes, 3), $i);
+    color: transparentize(nth(nth($palettes, 3), $i), 1-$alpha);
   }
   @at-root .a-solidao-das-pedras & {
-    color: nth(nth($palettes, 4), $i);
+    color: transparentize(nth(nth($palettes, 4), $i), 1-$alpha);
   }
 }
 
-@mixin var-bgcolor($i) {
+@mixin var-bgcolor($i, $alpha: 1) {
   @at-root .sol-de-sabado & {
-    background-color: nth(nth($palettes, 1), $i);
+    background-color: transparentize(nth(nth($palettes, 1), $i), 1-$alpha);
   }
   @at-root .sol-de-segunda & {
-    background-color: nth(nth($palettes, 2), $i);
+    background-color: transparentize(nth(nth($palettes, 2), $i), 1-$alpha);
   }
   @at-root .paisagem-celta & {
-    background-color: nth(nth($palettes, 3), $i);
+    background-color: transparentize(nth(nth($palettes, 3), $i), 1-$alpha);
   }
   @at-root .a-solidao-das-pedras & {
-    background-color: nth(nth($palettes, 4), $i);
+    background-color: transparentize(nth(nth($palettes, 4), $i), 1-$alpha);
   }
 }
 
