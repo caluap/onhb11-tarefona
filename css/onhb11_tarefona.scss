@@ -457,6 +457,21 @@ img {
     line-height: 15px;
   }
 
+  .vertical-bar {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    color: white;
+
+    writing-mode: vertical-lr;
+    padding: $m $m * 2/3;
+    @include var-bgcolor(1, 0.7);
+    background-blend-mode: multiply;
+  }
+
   #page1 {
     position: relative;
     overflow: hidden;
@@ -490,18 +505,7 @@ img {
       font-family: "Infini", sans-serif;
       font-size: 22px;
       line-height: 27px;
-      position: absolute;
-      z-index: 3;
-      top: 0;
-      left: 0;
-      bottom: 0;
-
-      color: white;
-
-      writing-mode: vertical-lr;
-      padding: $m $m * 2/3;
-      @include var-bgcolor(1, 0.7);
-      background-blend-mode: multiply;
+      @extend .vertical-bar;
       span {
         float: right;
       }
