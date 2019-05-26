@@ -467,11 +467,16 @@ img {
     top: 0;
     left: 0;
     bottom: 0;
+    box-sizing: border-box;
+    width: percentage(2/17);
 
     color: white;
 
     writing-mode: vertical-lr;
-    padding: $m $m * 2/3;
+    text-align: center;
+    padding: $m 0;
+    display: flex;
+    align-items: center;
     @include var-bgcolor(1, 0.7);
     background-blend-mode: multiply;
   }
@@ -510,9 +515,7 @@ img {
       font-size: 22px;
       line-height: 27px;
       @extend .vertical-bar;
-      span {
-        float: right;
-      }
+      justify-content: space-between;
     }
   }
   #page2 {
