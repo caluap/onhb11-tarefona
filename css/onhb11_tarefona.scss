@@ -479,7 +479,7 @@ img {
 
     writing-mode: vertical-lr;
     text-align: center;
-    padding: $m 0;
+    padding: percentage(1/17) 0;
     display: flex;
     align-items: center;
     @include var-bgcolor(1, 0.7);
@@ -508,7 +508,7 @@ img {
       font-family: "Yatra One", cursive;
       font-size: 28px;
       position: absolute;
-      right: $m;
+      right: percentage(1/17);
       bottom: $m;
       text-align: right;
       z-index: 3;
