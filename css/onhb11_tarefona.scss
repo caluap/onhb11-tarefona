@@ -108,6 +108,19 @@ img {
   }
 }
 
+.generic-full-page-img {
+  @extend .sepiaish-img;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  z-index: 1;
+}
+
 .jean-luc {
   // jean luc
   font-family: "IBM Plex Serif", serif;
@@ -190,16 +203,7 @@ img {
     }
 
     img {
-      @extend .sepiaish-img;
-      position: absolute;
-      left: 0;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 100%;
-
-      object-fit: cover;
-      z-index: 1;
+      @extend .generic-full-page-img;
     }
   }
 
