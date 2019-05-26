@@ -456,9 +456,14 @@ img {
   font-size: 11px;
 
   .default-text {
-    font-family: "Infini", sans-serif;
-    font-size: 11px;
-    line-height: 15px;
+    p {
+      font-family: "Infini", sans-serif;
+      font-size: 11px;
+      line-height: 15px;
+    }
+    p + p {
+      text-indent: $m * 2/3;
+    }
   }
 
   .vertical-bar {
@@ -548,9 +553,6 @@ img {
       .main-text {
         grid-column: 3;
         @extend .default-text;
-        p + p {
-          text-indent: $m * 2/3;
-        }
       }
     }
     .map {
