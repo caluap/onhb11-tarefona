@@ -1,5 +1,5 @@
 // @import "01-jeanluc.scss";
-// @import "02-infini.scss";
+@import "02-infini.scss";
 @import "03-syne.scss";
 
 $m: 24px;
@@ -444,5 +444,66 @@ img {
         }
       }
     }
+  }
+}
+
+.infini {
+  font-family: "Infini", sans-serif;
+  font-size: 11px;
+  #page1 {
+    position: relative;
+    overflow: hidden;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      height: 6 * $m;
+      background: linear-gradient(to bottom, transparent, black);
+      mix-blend-mode: multiply;
+      opacity: 0.5;
+      z-index: 2;
+    }
+    img {
+      @extend .generic-full-page-img;
+    }
+    h1 {
+      font-family: "Yatra One", cursive;
+      font-size: 28px;
+      position: absolute;
+      right: $m;
+      bottom: $m;
+      text-align: right;
+      z-index: 3;
+      color: white;
+      text-transform: lowercase;
+    }
+    h2 {
+      font-family: "Infini", sans-serif;
+      font-size: 22px;
+      line-height: 27px;
+      position: absolute;
+      z-index: 3;
+      top: 0;
+      left: 0;
+      bottom: 0;
+
+      color: white;
+
+      writing-mode: vertical-lr;
+      padding: $m $m * 2/3;
+      @include var-bgcolor(1, 0.7);
+      background-blend-mode: multiply;
+      span {
+        float: right;
+      }
+    }
+  }
+  #page2 {
+  }
+  #page3 {
+  }
+  #page4 {
   }
 }
