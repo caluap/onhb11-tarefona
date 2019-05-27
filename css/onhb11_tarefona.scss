@@ -194,7 +194,12 @@ img {
 .pages {
   background: $paper;
   position: relative;
-  min-height: calc(480px * 1.4 - #{$m});
+  @media only screen and (min-width: $mobile) {
+    min-height: calc(480px * 1.4 - #{$m});
+  }
+  @media only screen and (max-width: $mobile) {
+    min-height: calc(100vw * 1.4 - #{$m});
+  }
   &:after {
     width: $m * 2;
     position: absolute;
