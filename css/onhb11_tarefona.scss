@@ -1162,9 +1162,14 @@ img {
       @include bars(1, true);
 
       grid-column: 2;
-      display: grid;
-      grid-template-columns: 9fr 1fr 5fr;
-      padding: $m 0;
+      @media only screen and (min-width: $mobile) {
+        display: grid;
+        grid-template-columns: 9fr 1fr 5fr;
+        padding: $m 0;
+      }
+      @media only screen and (max-width: $mobile) {
+        padding: $m $m * 1/3 $m * 4 0;
+      }
       header {
         grid-column: 3;
         grid-row: 1;
@@ -1187,6 +1192,9 @@ img {
         grid-column: 1;
         grid-row: 1;
         @extend .default-text;
+        @media only screen and (max-width: $mobile) {
+          margin-top: $m;
+        }
       }
     }
     .map {
@@ -1194,7 +1202,12 @@ img {
       z-index: 1;
       left: 0;
       bottom: 0;
-      width: percentage(14/17);
+      @media only screen and (min-width: $mobile) {
+        width: percentage(14/17);
+      }
+      @media only screen and (max-width: $mobile) {
+        width: 100%;
+      }
       line-height: 0;
       img {
         width: 100%;
@@ -1203,7 +1216,12 @@ img {
       .caption {
         position: absolute;
         bottom: $m;
-        left: percentage(2/21);
+        @media only screen and (min-width: $mobile) {
+          left: percentage(2/21);
+        }
+        @media only screen and (max-width: $mobile) {
+          left: percentage(1/17);
+        }
 
         font-family: "Syne", cursive;
         font-weight: 400;
