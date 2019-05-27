@@ -992,8 +992,14 @@ img {
     font-family: "Gangster Grotesk", sans-serif;
     font-weight: 400;
     color: white;
-    font-size: 34px;
-    line-height: 36px;
+    @media only screen and (min-width: $mobile) {
+      font-size: 34px;
+      line-height: 36px;
+    }
+    @media only screen and (max-width: $mobile) {
+      font-size: 24px;
+      line-height: 27px;
+    }
   }
 
   @mixin bars(
@@ -1056,17 +1062,29 @@ img {
         mix-blend-mode: hard-light;
         z-index: 2;
       }
+      $big-bar: 2 * $m;
       &:before {
         left: 0;
         top: 0;
-        bottom: 2 * $m;
-        width: 2 * $m;
+        @media only screen and (min-width: $mobile) {
+          bottom: $big-bar;
+          width: $big-bar;
+        }
+        @media only screen and (max-width: $mobile) {
+          bottom: $big-bar * $mob_shrink;
+          width: $big-bar * $mob_shrink;
+        }
       }
       &:after {
         left: 0;
         right: 0;
         bottom: 0;
-        height: 2 * $m;
+        @media only screen and (min-width: $mobile) {
+          height: $big-bar;
+        }
+        @media only screen and (max-width: $mobile) {
+          height: $big-bar * $mob_shrink;
+        }
       }
 
       h1 {
@@ -1076,8 +1094,14 @@ img {
         text-transform: lowercase;
 
         position: absolute;
-        bottom: $m;
-        left: $m;
+        @media only screen and (min-width: $mobile) {
+          left: $m;
+          bottom: $m;
+        }
+        @media only screen and (max-width: $mobile) {
+          left: $m * $mob_shrink;
+          bottom: $m * $mob_shrink;
+        }
         z-index: 3;
       }
 
@@ -1085,19 +1109,36 @@ img {
         font-family: "Gangster Grotesk", sans-serif;
         font-weight: bold;
         color: white;
-        font-size: 34px;
-        line-height: 36px;
+        @media only screen and (min-width: $mobile) {
+          font-size: 34px;
+          line-height: 36px;
+          span {
+            margin-top: $m/2;
+          }
+        }
+        @media only screen and (max-width: $mobile) {
+          font-size: 24px;
+          line-height: 27px;
+          span {
+            margin-top: $m/4;
+          }
+        }
 
         @extend .text-shadow;
 
         width: percentage(11/17);
 
         position: absolute;
-        left: $m;
-        top: $m;
+        @media only screen and (min-width: $mobile) {
+          left: $m;
+          top: $m;
+        }
+        @media only screen and (max-width: $mobile) {
+          left: $m * $mob_shrink;
+          top: $m * $mob_shrink;
+        }
         z-index: 3;
         span {
-          margin-top: $m/2;
           display: block;
           font-family: "Syne", cursive;
           font-weight: 400;
