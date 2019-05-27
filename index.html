@@ -75,7 +75,7 @@
         <label>Paleta</label>
         <select
           class="select-css"
-          onchange="changeClass(this, '#color-palette')"
+          onchange="changeClass(this, '#color-palette'); changeMap(this)"
         >
           <option value="sol-de-sabado">Sol de sábado</option>
           <option value="sol-de-segunda">Sol de segunda</option>
@@ -89,6 +89,16 @@
     </div>
     <div id="here-comes-treble"></div>
     <script>
+      function changeMap(who) {
+        let iNewImg = who.selectedIndex + 1;
+        let currentSrc = $("#state-map").attr("src");
+        let iStr = currentSrc.indexOf("mapa_cor") + "mapa_cor".length;
+        let newStr =
+          currentSrc.substring(0, iStr) +
+          iNewImg +
+          currentSrc.substring(iStr + 1);
+        $("#state-map").attr("src", newStr);
+      }
       function changeClass(who, affectedDiv) {
         $(affectedDiv)
           .removeClass()
