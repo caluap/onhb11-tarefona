@@ -727,7 +727,78 @@ img {
 }
 
 .syne {
+  font-family: "Gangster Grotesk", sans-serif;
+  font-size: 11px;
+
   #page1 {
+    position: relative;
+    overflow: hidden;
+
+    header {
+      // colored bars
+      &:before,
+      &:after {
+        content: "";
+        position: absolute;
+        @include var-bgcolor(1);
+        mix-blend-mode: overlay;
+        z-index: 2;
+      }
+      &:before {
+        left: 0;
+        top: 0;
+        bottom: 2 * $m;
+        width: 2 * $m;
+      }
+      &:after {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 2 * $m;
+      }
+
+      h1 {
+        font-family: "Gangster Grotesk", sans-serif;
+        font-weight: 400;
+        color: white;
+        font-size: 34px;
+        line-height: 36px;
+
+        text-transform: lowercase;
+
+        position: absolute;
+        bottom: $m;
+        left: $m;
+        z-index: 3;
+      }
+
+      h2 {
+        font-family: "Gangster Grotesk", sans-serif;
+        font-weight: bold;
+        color: white;
+        font-size: 34px;
+        line-height: 36px;
+
+        width: percentage(11/17);
+
+        position: absolute;
+        left: $m;
+        top: $m;
+        z-index: 3;
+        span {
+          margin-top: $m/2;
+          display: block;
+          font-family: "Syne", cursive;
+          font-weight: 400;
+          font-style: italic;
+        }
+      }
+    }
+
+    img {
+      @extend .generic-full-page-img;
+      z-index: 1;
+    }
   }
   #page2 {
   }
