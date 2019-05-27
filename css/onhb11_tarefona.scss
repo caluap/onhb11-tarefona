@@ -741,6 +741,47 @@ img {
     }
   }
 
+  @mixin bars($c, $right_page: true) {
+    &:after,
+    &:before {
+      content: "";
+      position: absolute;
+      @if $c == 1 {
+        @include var-bgcolor(1);
+      }
+      @if $c == 2 {
+        @include var-bgcolor(2);
+      }
+      z-index: 3;
+    }
+
+    &:before {
+      width: $m/3;
+
+      top: 0;
+      bottom: 0;
+
+      @if $right_page {
+        right: percentage(-1/15);
+      } @else {
+        left: percentage(-1/15);
+      }
+    }
+
+    &:after {
+      height: $m/3;
+
+      left: percentage(-1/15);
+      right: percentage(-1/15);
+
+      @if $right_page {
+        top: 0;
+      } @else {
+        bottom: 0;
+      }
+    }
+  }
+
   #page1 {
     position: relative;
     overflow: hidden;
@@ -817,6 +858,8 @@ img {
     article {
       position: relative;
       z-index: 2;
+
+      @include bars(1, true);
 
       grid-column: 2;
       display: grid;
