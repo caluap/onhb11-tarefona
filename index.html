@@ -18,7 +18,7 @@
       let templateUrl = "template.mustache";
 
       jQuery(function($) {
-        var body = $("body");
+        var body = $("#here-comes-treble");
 
         $.when(
           $.get(viewUrl),
@@ -58,5 +58,29 @@
       });
     </script>
   </head>
-  <body></body>
+  <body>
+    <div id="toolbar">
+      <div class="form-control">
+        <label>Leiaute</label>
+        <select class="select-css">
+          <option>Jean Luc</option>
+          <option>Infini</option>
+          <option>Syne</option>
+        </select>
+      </div>
+      <div class="form-control">
+        <label>Paleta</label>
+        <select class="select-css">
+          <option>Sol de sábado</option>
+          <option>Sol de segunda</option>
+          <option>Paisagem celta</option>
+          <option>A solidão das pedras</option>
+        </select>
+      </div>
+      <div class="button-container">
+        <button>Salvar rascunho</button>
+      </div>
+    </div>
+    <div id="here-comes-treble"></div>
+  </body>
 </html>
