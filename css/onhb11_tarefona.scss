@@ -201,6 +201,10 @@ img {
       padding: $m;
       width: 50%;
       background: black;
+
+      br {
+        display: none;
+      }
     }
 
     h2 {
@@ -522,6 +526,10 @@ img {
       z-index: 3;
       color: white;
       text-transform: lowercase;
+
+      br {
+        display: none;
+      }
     }
     h2 {
       font-family: "Infini", sans-serif;
