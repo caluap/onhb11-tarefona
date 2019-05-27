@@ -62,19 +62,25 @@
     <div id="toolbar">
       <div class="form-control">
         <label>Leiaute</label>
-        <select class="select-css">
-          <option>Jean Luc</option>
-          <option>Infini</option>
-          <option>Syne</option>
+        <select
+          class="select-css"
+          onchange="changeClass(this, '#layout-template')"
+        >
+          <option value="jean-luc">Jean Luc</option>
+          <option value="infini">Infini</option>
+          <option value="syne">Syne</option>
         </select>
       </div>
       <div class="form-control">
         <label>Paleta</label>
-        <select class="select-css">
-          <option>Sol de sábado</option>
-          <option>Sol de segunda</option>
-          <option>Paisagem celta</option>
-          <option>A solidão das pedras</option>
+        <select
+          class="select-css"
+          onchange="changeClass(this, '#color-palette')"
+        >
+          <option value="sol-de-sabado">Sol de sábado</option>
+          <option value="sol-de-segunda">Sol de segunda</option>
+          <option value="paisagem-celta">Paisagem celta</option>
+          <option value="a-solidao-das-pedras">A solidão das pedras</option>
         </select>
       </div>
       <div class="button-container">
@@ -82,5 +88,12 @@
       </div>
     </div>
     <div id="here-comes-treble"></div>
+    <script>
+      function changeClass(who, affectedDiv) {
+        $(affectedDiv)
+          .removeClass()
+          .addClass(who.value);
+      }
+    </script>
   </body>
 </html>
