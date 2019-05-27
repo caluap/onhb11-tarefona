@@ -434,6 +434,11 @@ img {
       z-index: 3;
 
       margin-bottom: $m/2;
+      @media only screen and (max-width: $mobile) {
+        br {
+          display: none;
+        }
+      }
     }
 
     header {
@@ -443,10 +448,12 @@ img {
       margin: $m;
       @extend .default-text;
       flex-grow: 1;
-      columns: 2;
-      column-gap: $m;
-      -moz-column-fill: auto; /* Firefox */
-      column-fill: auto;
+      @media only screen and (min-width: $mobile) {
+        columns: 2;
+        column-gap: $m;
+        -moz-column-fill: auto; /* Firefox */
+        column-fill: auto;
+      }
       p + p {
         text-indent: $m/3;
       }
