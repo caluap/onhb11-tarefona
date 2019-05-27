@@ -617,6 +617,8 @@ img {
       h3 {
         @extend .vertical-bar;
 
+        @include var-bgcolor(2, 0.8);
+
         justify-content: center;
         text-align: center;
         font-family: "Yatra One", cursive;
