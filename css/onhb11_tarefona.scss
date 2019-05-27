@@ -730,6 +730,17 @@ img {
   font-family: "Gangster Grotesk", sans-serif;
   font-size: 11px;
 
+  .default-text {
+    p {
+      font-family: "Gangster Grotesk", sans-serif;
+      font-size: 12px;
+      line-height: 16px;
+    }
+    p + p {
+      text-indent: $m * 2/3;
+    }
+  }
+
   #page1 {
     position: relative;
     overflow: hidden;
@@ -801,6 +812,67 @@ img {
     }
   }
   #page2 {
+    display: grid;
+    grid-template-columns: 1fr 15fr 1fr;
+    article {
+      position: relative;
+      z-index: 2;
+
+      grid-column: 2;
+      display: grid;
+      grid-template-columns: 18fr 1fr 11fr;
+      padding: $m 0;
+      header {
+        grid-column: 3;
+        grid-row: 1;
+        h3 {
+          font-size: 23px;
+          line-height: 26px;
+          font-weight: bold;
+          @include var-color(2);
+        }
+        h4 {
+          margin-top: $m/2;
+          font-family: "Syne", cursive;
+          font-weight: bold;
+          font-style: normal;
+          font-size: 12px;
+          line-height: 16px;
+        }
+      }
+      .main-text {
+        grid-column: 1;
+        grid-row: 1;
+        @extend .default-text;
+      }
+    }
+    .map {
+      position: absolute;
+      z-index: 1;
+      left: 0;
+      bottom: 0;
+      width: percentage(21/30);
+      line-height: 0;
+      img {
+        width: 100%;
+        opacity: 0.6;
+      }
+      .caption {
+        position: absolute;
+        bottom: $m;
+        left: percentage(2/21);
+
+        font-family: "Syne", cursive;
+        font-weight: 400;
+        font-style: italic;
+        @include var-color(2);
+        font-size: 14px;
+        &:before {
+          content: "↑";
+          padding-right: $m/2;
+        }
+      }
+    }
   }
   #page3 {
   }
