@@ -243,6 +243,8 @@ img {
   font-family: "IBM Plex Serif", serif;
   font-size: 11px;
 
+  $mob_shrink: 2/3;
+
   .default-text {
     font-size: 12px;
     line-height: 17px;
@@ -283,42 +285,63 @@ img {
     h1 {
       font-family: "JeanLucWeb-Thin", sans-serif;
       font-weight: normal;
-      font-size: 38px;
-      line-height: 34px;
       @include var-color(1);
       text-transform: uppercase;
 
       box-sizing: border-box;
       position: absolute;
       bottom: $m;
-      padding: $m;
-      width: 50%;
-      background: black;
+      @media only screen and (min-width: $mobile) {
+        width: 50%;
+        font-size: 38px;
+        line-height: 34px;
+        padding: $m;
 
-      br {
-        display: none;
+        br {
+          display: none;
+        }
       }
+      @media only screen and (max-width: $mobile) {
+        width: percentage(2/3);
+        padding: $m * $mob_shrink;
+        font-size: 32px;
+      }
+      background: black;
     }
 
     h2 {
       box-sizing: border-box;
       position: absolute;
       top: $m;
-      width: 50%;
-      padding: $m;
+      @media only screen and (min-width: $mobile) {
+        padding: $m;
+        width: 50%;
+        font-size: 23px;
+        line-height: 25px;
+        span {
+          margin-top: $m * 8/5;
+          font-size: 43px;
+        }
+      }
+      @media only screen and (max-width: $mobile) {
+        padding: $m * $mob_shrink;
+        width: percentage(2/3);
+        font-size: 23px * $mob_shrink + 5px;
+        line-height: 25px * $mob_shrink + 8px;
+        span {
+          margin-top: $m * 8/5 * $mob_shrink;
+          font-size: 32px;
+        }
+      }
       @include var-bgcolor(2);
       color: white;
       font-style: italic;
-      font-size: 23px;
-      line-height: 25px;
       font-weight: bold;
       span {
         position: absolute;
-        margin-top: $m * 8/5;
         display: block;
         font-family: "JeanLucWeb-Thin", sans-serif;
         font-weight: normal;
-        font-size: 43px;
         font-style: normal;
 
         @extend .text-shadow;
