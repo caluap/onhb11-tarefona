@@ -741,7 +741,20 @@ img {
     }
   }
 
-  @mixin bars($c, $right_page: true) {
+  .big-title {
+    font-family: "Gangster Grotesk", sans-serif;
+    font-weight: 400;
+    color: white;
+    font-size: 34px;
+    line-height: 36px;
+  }
+
+  @mixin bars(
+    $c,
+    $right_page: true,
+    $min_l: percentage(-1/15),
+    $min_r: percentage(-1/15)
+  ) {
     &:after,
     &:before {
       content: "";
@@ -762,17 +775,17 @@ img {
       bottom: 0;
 
       @if $right_page {
-        right: percentage(-1/15);
+        right: $min_r;
       } @else {
-        left: percentage(-1/15);
+        left: $min_l;
       }
     }
 
     &:after {
       height: $m/3;
 
-      left: percentage(-1/15);
-      right: percentage(-1/15);
+      right: $min_r;
+      left: $min_l;
 
       @if $right_page {
         top: 0;
@@ -810,11 +823,7 @@ img {
       }
 
       h1 {
-        font-family: "Gangster Grotesk", sans-serif;
-        font-weight: 400;
-        color: white;
-        font-size: 34px;
-        line-height: 36px;
+        @extend .big-title;
 
         text-transform: lowercase;
 
