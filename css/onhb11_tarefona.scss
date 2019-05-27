@@ -360,7 +360,12 @@ img {
       z-index: 2;
       margin: $m;
       display: grid;
-      grid-template-columns: 6fr 1fr 8fr;
+      @media only screen and (min-width: $mobile) {
+        grid-template-columns: 6fr 1fr 8fr;
+      }
+      @media only screen and (max-width: $mobile) {
+        grid-template-columns: 1fr;
+      }
     }
 
     h3 {
@@ -374,9 +379,17 @@ img {
       font-weight: 300;
       font-size: 16px;
       line-height: 21px;
+      @media only screen and (max-width: $mobile) {
+        margin-bottom: $m/2;
+      }
     }
     .main-text {
-      grid-column: 3;
+      @media only screen and (min-width: $mobile) {
+        grid-column: 3;
+      }
+      @media only screen and (max-width: $mobile) {
+        padding-bottom: $m * 4;
+      }
     }
     article {
       p {
