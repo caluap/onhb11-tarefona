@@ -831,11 +831,17 @@ img {
     .uma-vida-um-evento {
       @extend .default-text;
 
+      @media only screen and (min-width: $mobile) {
+        columns: 2;
+        column-gap: percentage(1/13);
+        -moz-column-fill: auto; /* Firefox */
+        column-fill: auto;
+      }
+      @media only screen and (max-width: $mobile) {
+        padding-bottom: $m * 2;
+      }
+
       flex-grow: 1;
-      columns: 2;
-      column-gap: percentage(1/13);
-      -moz-column-fill: auto; /* Firefox */
-      column-fill: auto;
 
       h3 {
         @extend .vertical-bar;
@@ -857,12 +863,20 @@ img {
   }
   #page4 {
     display: grid;
-    padding: percentage(1/17) 0 0 0;
-    grid-auto-rows: auto min-content;
-    grid-template-columns: 1fr 6fr 2fr 7fr 1fr;
+    @media only screen and (min-width: $mobile) {
+      padding: percentage(1/17) 0 0 0;
+      grid-auto-rows: auto min-content;
+      grid-template-columns: 1fr 6fr 2fr 7fr 1fr;
+    }
+    @media only screen and (max-width: $mobile) {
+      padding: $m;
+    }
+
     .question_answer {
-      grid-column: 4;
-      grid-row: 1;
+      @media only screen and (min-width: $mobile) {
+        grid-column: 4;
+        grid-row: 1;
+      }
 
       @extend .default-text;
 
@@ -885,8 +899,15 @@ img {
     }
     .timeline {
       $offset: $m * 2/3;
-      grid-column: 2;
-      grid-row: 1;
+
+      @media only screen and (min-width: $mobile) {
+        grid-column: 2;
+        grid-row: 1;
+      }
+      @media only screen and (max-width: $mobile) {
+        margin-top: $m;
+      }
+
       padding-left: $offset;
       h3 {
         font-family: "Yatra One", cursive;
@@ -912,11 +933,17 @@ img {
       }
     }
     .the-team {
-      grid-column: 1 / -1;
-      grid-row: 2;
+      @media only screen and (min-width: $mobile) {
+        grid-column: 1 / -1;
+        grid-row: 2;
 
-      display: grid;
-      grid-template-columns: 9fr 8fr;
+        display: grid;
+        grid-template-columns: 9fr 8fr;
+      }
+
+      @media only screen and (max-width: $mobile) {
+        margin-top: $m;
+      }
 
       @include var-bgcolor(2, 0.3);
 
@@ -929,8 +956,13 @@ img {
         mix-blend-mode: luminosity;
       }
       .about-the-team {
-        grid-column: 2;
-        padding: percentage(1/8);
+        @media only screen and (min-width: $mobile) {
+          grid-column: 2;
+          padding: percentage(1/8);
+        }
+        @media only screen and (max-width: $mobile) {
+          padding: $m/2;
+        }
         @extend .small-text;
         p + p {
           text-indent: 0;
