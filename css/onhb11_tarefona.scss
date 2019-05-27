@@ -5,6 +5,7 @@
 $m: 24px;
 $mobile: 480px;
 $mob_offset: 1/2;
+$mob_shrink: 2/3;
 
 $paper: rgb(255, 240, 224);
 
@@ -247,8 +248,6 @@ img {
   // jean luc
   font-family: "IBM Plex Serif", serif;
   font-size: 11px;
-
-  $mob_shrink: 2/3;
 
   .default-text {
     font-size: 12px;
@@ -691,10 +690,16 @@ img {
     }
     h1 {
       font-family: "Yatra One", cursive;
-      font-size: 26px;
+      @media only screen and (min-width: $mobile) {
+        font-size: 26px;
+        bottom: $m;
+      }
+      @media only screen and (max-width: $mobile) {
+        font-size: 21px;
+        bottom: $m * $mob_offset;
+      }
       position: absolute;
       right: percentage(1/17);
-      bottom: $m;
       text-align: right;
       z-index: 3;
       color: white;
@@ -708,24 +713,37 @@ img {
     }
     h2 {
       font-family: "Infini", sans-serif;
-      font-size: 22px;
-      line-height: 27px;
+      @media only screen and (min-width: $mobile) {
+        font-size: 22px;
+        line-height: 27px;
+      }
+      @media only screen and (max-width: $mobile) {
+        font-size: 18px;
+        line-height: 23px;
+      }
       @extend .vertical-bar;
       justify-content: space-between;
     }
   }
   #page2 {
-    display: grid;
-    padding-top: percentage(1/17);
-    grid-template-columns: 1fr 15fr 1fr;
+    @media only screen and (min-width: $mobile) {
+      display: grid;
+      padding-top: percentage(1/17);
+      grid-template-columns: 1fr 15fr 1fr;
+    }
+    @media only screen and (max-width: $mobile) {
+      padding: $m;
+    }
     position: relative;
     article {
-      grid-column: 2;
-      display: grid;
-      grid-template-columns: 6fr 1fr 8fr;
+      @media only screen and (min-width: $mobile) {
+        grid-column: 2;
+        display: grid;
+        grid-template-columns: 6fr 1fr 8fr;
+        padding-bottom: percentage(1/15);
+      }
       position: relative;
       z-index: 4;
-      padding-bottom: percentage(1/15);
       header {
         grid-column: 1;
         h3 {
@@ -739,11 +757,17 @@ img {
           color: mix($paper, black);
           font-size: 17px;
           line-height: 23px;
+          @media only screen and (max-width: $mobile) {
+            margin-bottom: $m;
+          }
         }
       }
       .main-text {
         grid-column: 3;
         @extend .default-text;
+        @media only screen and (max-width: $mobile) {
+          margin-bottom: $m * 4;
+        }
       }
     }
     .map {
@@ -751,12 +775,20 @@ img {
       z-index: 1;
       bottom: 0;
       left: 0;
-      width: percentage(10/17);
+      @media only screen and (min-width: $mobile) {
+        width: percentage(10/17);
+      }
+      @media only screen and (max-width: $mobile) {
+        width: 100%;
+      }
       line-height: 0;
       img {
         width: 100%;
         position: relative;
         z-index: 2;
+        @media only screen and (max-width: $mobile) {
+          opacity: 0.6;
+        }
       }
       &:before {
         content: "";
@@ -765,14 +797,22 @@ img {
         bottom: 0;
         left: 0;
         right: 0;
-        height: $m * 7;
+        @media only screen and (min-width: $mobile) {
+          height: $m * 7;
+        }
         opacity: 0.75;
         background: linear-gradient(to bottom, transparent, $paper);
       }
       .caption {
         position: absolute;
-        bottom: percentage(1/17);
-        left: percentage(1/17);
+        @media only screen and (min-width: $mobile) {
+          bottom: percentage(1/17);
+          left: percentage(1/17);
+        }
+        @media only screen and (max-width: $mobile) {
+          left: $m;
+          bottom: $m;
+        }
         font-size: 13px;
         line-height: 16px;
         color: mix(black, $paper);
