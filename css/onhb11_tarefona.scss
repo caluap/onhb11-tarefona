@@ -3,6 +3,8 @@
 @import "03-syne.scss";
 
 $m: 24px;
+$mobile: 480px;
+$mob_offset: 1/2;
 
 $paper: rgb(255, 240, 224);
 
@@ -160,12 +162,29 @@ img {
 }
 
 .spreads {
-  margin: $m * 3 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: calc(100% - #{2 * $m});
-  max-width: 960px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  @media only screen and (min-width: $mobile) {
+    width: calc(100% - #{2 * $m});
+    margin: $m * 3 auto;
+    grid-template-columns: 1fr 1fr;
+    max-width: 960px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  }
+  @media only screen and (max-width: $mobile) {
+    width: calc(100% - #{$m * $mob_offset * 2});
+    grid-template-columns: 1fr;
+    &#spread1 {
+      margin: $m * 2 auto 0 auto;
+    }
+    &#spread2 {
+      margin: 0 auto $m * 2 auto;
+    }
+    .pages {
+      margin-bottom: $m/2;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+    }
+  }
 }
 
 .sepiaish-img {
@@ -191,12 +210,18 @@ img {
   &:nth-child(odd):after {
     right: 0;
     background-image: linear-gradient(to right, transparent, $shade);
-    border-right: 1px solid mix(black, $shade);
   }
   &:nth-child(even):after {
-    border-left: 1px solid mix(white, $shade);
     left: 0;
     background-image: linear-gradient(to right, $shade, transparent);
+  }
+  @media only screen and (min-width: $mobile) {
+    &:nth-child(odd):after {
+      border-right: 1px solid mix(black, $shade);
+    }
+    &:nth-child(even):after {
+      border-left: 1px solid mix(white, $shade);
+    }
   }
 }
 
