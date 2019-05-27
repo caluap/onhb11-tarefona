@@ -1052,8 +1052,8 @@ img {
       &:after {
         content: "";
         position: absolute;
-        @include var-bgcolor(1);
-        mix-blend-mode: overlay;
+        @include var-bgcolor(1, 0.5);
+        mix-blend-mode: hard-light;
         z-index: 2;
       }
       &:before {
