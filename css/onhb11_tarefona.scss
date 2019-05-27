@@ -1262,19 +1262,31 @@ img {
       @include bars(2, false, 0, 0);
       @extend .default-text;
 
-      flex-grow: 1;
-      columns: 2;
-      column-gap: percentage(1/14);
-      -moz-column-fill: auto; /* Firefox */
-      column-fill: auto;
+      @media only screen and (min-width: $mobile) {
+        columns: 2;
+        column-gap: percentage(1/14);
+        -moz-column-fill: auto; /* Firefox */
+        column-fill: auto;
+      }
+      @media only screen and (max-width: $mobile) {
+        padding-left: calc(#{percentage(1/17) + #{$m/3}});
+        padding-bottom: $m * 4/3;
+      }
 
       padding: percentage(1/17);
-      padding-left: percentage(1/17);
+      flex-grow: 1;
 
       h3 {
         position: absolute;
-        top: $m;
-        left: $m;
+
+        @media only screen and (min-width: $mobile) {
+          top: $m;
+          left: $m;
+        }
+        @media only screen and (max-width: $mobile) {
+          top: $m * $mob_shrink;
+          left: $m * $mob_shrink + $m/3;
+        }
 
         @extend .text-shadow;
 
