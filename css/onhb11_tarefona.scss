@@ -972,5 +972,133 @@ img {
     }
   }
   #page4 {
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr 6fr 1fr;
+    grid-auto-rows: auto min-content;
+
+    position: relative;
+
+    .question_answer {
+      @include bars(2, true, 0, 0);
+
+      grid-column: 2;
+      grid-row: 1;
+      padding: percentage(1/8) 0;
+
+      h3 {
+        font-size: 23px;
+        @include var-color(2);
+
+        font-family: "Syne", cursive;
+        font-weight: bold;
+        font-style: normal;
+      }
+
+      .question {
+        font-family: "Syne", cursive;
+        font-weight: bold;
+        font-style: normal;
+
+        margin-top: $m/6;
+        padding-left: percentage(1/16);
+
+        font-size: 12px;
+        line-height: 16px;
+        & + h3 {
+          margin-top: $m/2;
+        }
+      }
+      @extend .default-text;
+
+      .answer {
+        margin-top: $m/6;
+        padding-left: percentage(1/16);
+      }
+    }
+    .timeline {
+      grid-column: 4;
+
+      padding-top: percentage(1/6);
+      padding-left: percentage(1/6/2);
+
+      h3 {
+        font-family: "Syne", cursive;
+        font-weight: 400;
+        font-style: italic;
+        font-size: 20px;
+        @include var-color(1);
+        margin-bottom: $m/6;
+      }
+      @extend .default-text;
+
+      li {
+        position: relative;
+
+        &:before,
+        &:after {
+          content: "";
+          position: absolute;
+        }
+        &:before {
+          width: 5px;
+          height: 5px;
+          top: 5px;
+          left: calc(#{percentage(-1/6/2)} - 2px);
+          @include var-bgcolor(1);
+          border: 2px solid $paper;
+          border-radius: 50%;
+          z-index: 3;
+        }
+        &:after {
+          z-index: 2;
+          left: calc(#{percentage(-1/6/2)} + 2px);
+          bottom: -15px;
+          top: 5px + 4px;
+          @at-root .sol-de-sabado & {
+            border-left: 1px solid nth(nth($palettes, 1), 2);
+          }
+          @at-root .sol-de-segunda & {
+            border-left: 1px solid nth(nth($palettes, 2), 2);
+          }
+          @at-root .paisagem-celta & {
+            border-left: 1px solid nth(nth($palettes, 3), 2);
+          }
+          @at-root .a-solidao-das-pedras & {
+            border-left: 1px solid nth(nth($palettes, 4), 2);
+          }
+        }
+        & + li {
+          margin-top: $m/3;
+        }
+        &:last-child:after {
+          display: none;
+        }
+      }
+    }
+
+    .the-team {
+      grid-column: 2;
+      grid-row: 2;
+
+      @include var-bgcolor(2, 0.6);
+      padding-left: percentage(1/17);
+      padding-bottom: percentage(1/8);
+
+      img {
+        @extend .sepiaish-img;
+        mix-blend-mode: luminosity;
+      }
+      .about-the-team {
+        margin-top: $m/2;
+        padding-right: percentage(1/15);
+        p {
+          font-size: 9px;
+          line-height: 12px;
+          & + p {
+            margin-top: 12px;
+          }
+        }
+      }
+    }
   }
 }
