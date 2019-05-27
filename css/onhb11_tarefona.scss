@@ -458,11 +458,19 @@ img {
   .default-text {
     p {
       font-family: "Infini", sans-serif;
-      font-size: 11px;
-      line-height: 15px;
+      font-size: 13px;
+      line-height: 17px;
     }
     p + p {
       text-indent: $m * 2/3;
+    }
+  }
+
+  .small-text {
+    @extend .default-text;
+    p {
+      font-size: 11px;
+      line-height: 14px;
     }
   }
 
@@ -506,7 +514,7 @@ img {
     }
     h1 {
       font-family: "Yatra One", cursive;
-      font-size: 28px;
+      font-size: 26px;
       position: absolute;
       right: percentage(1/17);
       bottom: $m;
@@ -540,14 +548,14 @@ img {
         h3 {
           @include var-color(1);
           font-family: "Yatra One", cursive;
-          font-size: 24px;
-          line-height: 27px;
+          font-size: 26px;
+          line-height: 30px;
         }
         h4 {
           margin-top: $m/2;
           color: mix($paper, black);
-          font-size: 15px;
-          line-height: 19px;
+          font-size: 17px;
+          line-height: 23px;
         }
       }
       .main-text {
@@ -658,15 +666,16 @@ img {
       h3 {
         font-family: "Yatra One", cursive;
         @include var-color(1);
-        font-size: 14px;
+        font-size: 18px;
         position: relative;
         &:before {
           content: "→";
           font-family: "Infini", sans-serif;
-          font-size: 14px;
+          font-size: 17px;
           position: absolute;
           left: -$offset;
           top: -2px;
+          @include var-color(2);
         }
       }
       @extend .default-text;
@@ -697,7 +706,7 @@ img {
       .about-the-team {
         grid-column: 2;
         padding: percentage(1/8);
-        @extend .default-text;
+        @extend .small-text;
         p + p {
           text-indent: 0;
           margin-top: $m/2;
