@@ -429,7 +429,7 @@ img {
       img {
         grid-column: 1;
         @extend .sepiaish-img;
-        mix-blend-mode: multiply;
+        mix-blend-mode: luminosity;
       }
       .about-the-team {
         grid-column: 3;
@@ -703,7 +703,7 @@ img {
         width: 100%;
         object-fit: cover;
         @extend .sepiaish-img;
-        mix-blend-mode: multiply;
+        mix-blend-mode: luminosity;
       }
       .about-the-team {
         grid-column: 2;
