@@ -295,21 +295,24 @@ img {
 
       box-sizing: border-box;
       position: absolute;
-      bottom: $m;
       @media only screen and (min-width: $mobile) {
         width: 50%;
         font-size: 38px;
         line-height: 34px;
         padding: $m;
+        bottom: $m;
 
         br {
           display: none;
         }
       }
       @media only screen and (max-width: $mobile) {
-        width: percentage(2/3);
+        // width: percentage(2/3);
         padding: $m * $mob_shrink;
-        font-size: 32px;
+        bottom: 0;
+        right: 0;
+        text-align: right;
+        font-size: 21px;
       }
       background: black;
     }
@@ -317,8 +320,8 @@ img {
     h2 {
       box-sizing: border-box;
       position: absolute;
-      top: $m;
       @media only screen and (min-width: $mobile) {
+        top: $m;
         padding: $m;
         width: 50%;
         font-size: 23px;
@@ -329,13 +332,14 @@ img {
         }
       }
       @media only screen and (max-width: $mobile) {
+        top: 0;
         padding: $m * $mob_shrink;
-        width: percentage(2/3);
-        font-size: 23px * $mob_shrink + 5px;
-        line-height: 25px * $mob_shrink + 8px;
+
+        font-size: 18px;
+        line-height: 21px;
         span {
           margin-top: $m * 8/5 * $mob_shrink;
-          font-size: 32px;
+          font-size: 21px;
         }
       }
       @include var-bgcolor(2);
