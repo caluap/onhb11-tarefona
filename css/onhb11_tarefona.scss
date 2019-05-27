@@ -1,4 +1,4 @@
-// @import "01-jeanluc.scss";
+@import "01-jeanluc.scss";
 @import "02-infini.scss";
 @import "03-syne.scss";
 
@@ -15,22 +15,6 @@ $palettes: (
 
 body {
   background: #ddd;
-  // font-family: "JeanLucWeb-Thin", sans-serif;
-  // font-family: "IBM Plex Mono", monospace;
-  // font-family: "IBM Plex Serif", serif;
-
-  // font-family: "Infini", sans-serif;
-  // font-family: "Yatra One", cursive;
-
-  font-family: "Syne", cursive;
-  font-weight: bold;
-  font-style: italic;
-
-  font-family: "Gangster Grotesk", sans-serif;
-  font-weight: normal;
-  font-weight: bold;
-
-  font-size: 40px;
 }
 
 @mixin var-color($i, $alpha: 1) {
