@@ -463,10 +463,18 @@ img {
   #page4 {
     padding: percentage(1/17) 0 0 0;
     display: grid;
-    grid-template-columns: 1fr 8fr 1fr 6fr 1fr;
-    grid-auto-rows: auto min-content;
+    @media only screen and (min-width: $mobile) {
+      grid-template-columns: 1fr 8fr 1fr 6fr 1fr;
+      grid-auto-rows: auto min-content;
+    }
+    @media only screen and (max-width: $mobile) {
+      grid-template-columns: 1fr;
+      padding: $m $m 0 $m;
+    }
     .question_answer {
-      grid-column: 2;
+      @media only screen and (min-width: $mobile) {
+        grid-column: 2;
+      }
       h3 {
         @include var-color(1);
         font-family: "IBM Plex Mono", monospace;
@@ -487,7 +495,13 @@ img {
     }
 
     .timeline {
-      grid-column: 4;
+      @media only screen and (min-width: $mobile) {
+        grid-column: 4;
+      }
+
+      @media only screen and (max-width: $mobile) {
+        margin-top: $m;
+      }
       padding-left: percentage(1/6);
       font-family: "IBM Plex Mono";
       line-height: 13px;
@@ -557,8 +571,26 @@ img {
     }
 
     .the-team {
-      grid-column: 1 / -1;
-      padding: percentage(1/17);
+      @media only screen and (min-width: $mobile) {
+        grid-column: 1 / -1;
+        padding: percentage(1/17);
+
+        display: grid;
+        grid-template-columns: 9fr 1fr 5fr;
+        align-items: flex-end;
+        img {
+          grid-column: 1;
+        }
+        .about-the-team {
+          grid-column: 3;
+        }
+      }
+      @media only screen and (max-width: $mobile) {
+        margin-top: $m;
+        padding: $m;
+        width: 100%;
+        left: -$m;
+      }
       position: relative;
       &:before {
         content: "";
@@ -570,17 +602,11 @@ img {
         @include var-bgcolor(2);
         opacity: 0.4;
       }
-
-      display: grid;
-      grid-template-columns: 9fr 1fr 5fr;
-      align-items: flex-end;
       img {
-        grid-column: 1;
         @extend .sepiaish-img;
         mix-blend-mode: luminosity;
       }
       .about-the-team {
-        grid-column: 3;
         p {
           font-family: "IBM Plex Mono", monospace;
           @extend .small-text;
