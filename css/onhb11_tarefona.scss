@@ -363,11 +363,14 @@ img {
 
   #page2 {
     position: relative;
+    display: flex;
+    align-items: stretch;
     article {
       position: relative;
       z-index: 2;
       margin: $m;
       display: grid;
+      grid-auto-rows: min-content auto;
       @media only screen and (min-width: $mobile) {
         grid-template-columns: 6fr 1fr 8fr;
       }
@@ -399,6 +402,27 @@ img {
         padding-bottom: $m * 4;
       }
     }
+
+    .img1-caption {
+      grid-column: 3;
+      align-self: end;
+
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+
+      p {
+        width: percentage(3/4);
+        font-family: "IBM Plex Mono", monospace;
+        @extend .small-text;
+        &:after {
+          opacity: 0.6;
+          content: "(página anterior)";
+          padding-left: $m/2;
+        }
+      }
+    }
+
     article {
       p {
         font-family: "IBM Plex Serif", serif;
