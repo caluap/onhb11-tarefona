@@ -490,6 +490,18 @@ img {
         text-indent: $m/3;
       }
     }
+
+    .img2-caption {
+      @extend .small-text;
+      font-family: "IBM Plex Mono", monospace;
+      margin-top: $m/4;
+      padding: 0 $m $m $m;
+      p:before {
+        content: "Legenda da imagem: ";
+        padding-right: $m/2;
+        opacity: 0.6;
+      }
+    }
   }
 
   #page4 {
