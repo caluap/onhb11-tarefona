@@ -412,13 +412,11 @@ img {
       width: 100%;
 
       p {
-        width: percentage(3/4);
         font-family: "IBM Plex Mono", monospace;
         @extend .small-text;
         &:after {
           opacity: 0.6;
-          content: "(página anterior)";
-          padding-left: $m/2;
+          content: " (página anterior)";
         }
       }
     }
