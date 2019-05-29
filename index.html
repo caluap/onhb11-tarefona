@@ -90,7 +90,16 @@
     <div id="here-comes-treble"></div>
     <script>
       function changeMap(who) {
-        let iNewImg = who.selectedIndex + 1;
+        let iChangedTheOriginalOrderHenceThisStupidConversionArray = [
+          2,
+          3,
+          1,
+          4
+        ];
+        let iNewImg =
+          iChangedTheOriginalOrderHenceThisStupidConversionArray[
+            who.selectedIndex
+          ];
         let currentSrc = $("#state-map").attr("src");
         let iStr = currentSrc.indexOf("mapa_cor") + "mapa_cor".length;
         let newStr =
