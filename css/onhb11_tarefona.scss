@@ -1426,6 +1426,16 @@ img {
         font-weight: bold;
       }
     }
+
+    .img2-caption {
+      @extend .caption-text;
+      padding: percentage(1/17);
+      p:before {
+        @extend .caption-title;
+        content: "↑ imagem em cima";
+        transform: translate(-1.3ch);
+      }
+    }
   }
   #page4 {
     display: grid;
