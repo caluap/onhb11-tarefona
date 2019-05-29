@@ -453,11 +453,13 @@ img {
     }
     p.caption {
       font-family: "IBM Plex Mono", monospace;
-      @extend .default-text;
+      @extend .small-text;
       @include var-color(1);
       position: absolute;
       bottom: $m;
       left: $m;
+      mix-blend-mode: multiply;
+      width: percentage(6/15);
     }
   }
 
