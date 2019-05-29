@@ -9,6 +9,9 @@
 				{{#img_capa_versions.original.path}}
 					<img src="{{img_capa_versions.original.path}}">
 				{{/img_capa_versions.original.path}}
+				{{^img_capa_versions.original.path}}
+					<img src="img/placeholder_capa.jpg">
+				{{/img_capa_versions.original.path}}
 			</div>
 
 			<div class="pages" id="page2">
@@ -49,6 +52,9 @@
 						<div class="img-container">
 							{{#img_uma_vida_um_evento_versions.original.path}}
 								<img src="{{img_uma_vida_um_evento_versions.original.path}}">
+							{{/img_uma_vida_um_evento_versions.original.path}}
+							{{^img_uma_vida_um_evento_versions.original.path}}
+								<img src="img/placeholder_uma_vida_um_evento.jpg">
 							{{/img_uma_vida_um_evento_versions.original.path}}
 						</div>
 				</header>
@@ -156,6 +162,9 @@
 				<div class="the-team">
 					{{#img_equipe_versions.original.path}}
 						<img src="{{img_equipe_versions.original.path}}">
+					{{/img_equipe_versions.original.path}}
+					{{^img_equipe_versions.original.path}}
+						<img src="img/placeholder_equipe.jpg">
 					{{/img_equipe_versions.original.path}}
 					<div class="about-the-team">
 						<p>Projeto criado pela equipe “{{#nome_equipe}}{{.}}{{/nome_equipe}}{{^nome_equipe}}<span class="placeholder">. .... .. ... ......</span>{{/nome_equipe}}”, de {{#cidade}}{{.}}{{/cidade}}{{^cidade}}<span class="placeholder">. .... .. ... ......</span>{{/cidade}}, {{#estado}}{{.}}{{/estado}}{{^estado}}<span class="placeholder">..</span>{{/estado}}</p>
