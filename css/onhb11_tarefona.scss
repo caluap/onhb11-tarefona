@@ -1361,7 +1361,7 @@ img {
         @include var-color(2);
         font-size: 17px;
         &:before {
-          content: "↑";
+          content: "↗";
           padding-right: $m/2;
         }
       }
