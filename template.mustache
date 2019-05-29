@@ -87,8 +87,8 @@
 				<div class="the-team">
 					<img src="img/examples/equipe.jpg">
 					<div class="about-the-team">
-						<p>Projeto criado pela equipe “Universo expandindo em velocidade acelerada”, de São José das Couves Frescas, SP</p>
-						<p>Membros: Lucas Vignoli Reis, Caluã de Lacerda Pataca e Daniel Sarmento Abrahão, com orientação de Alessandra Leca Pedro.</p>
+						<p>Projeto criado pela equipe “{{#nome_equipe}}{{.}}{{/nome_equipe}}{{^nome_equipe}}<span class="placeholder">O nome da sua equipe</span>{{/nome_equipe}}”, de {{#cidade}}{{.}}{{/cidade}}{{^cidade}}<span class="placeholder">O nome da sua cidade</span>{{/cidade}}, {{#estado}}{{.}}{{/estado}}{{^estado}}<span class="placeholder">UF</span>{{/estado}}</p>
+						<p>Membros: {{#nome_membro_1}}{{.}}{{/nome_membro_1}}{{^nome_membro_1}}<span class="placeholder">Primeiro integrante</span>{{/nome_membro_1}}, {{#nome_membro_2}}{{.}}{{/nome_membro_2}}{{^nome_membro_2}}<span class="placeholder">Segunda integrante</span>{{/nome_membro_2}} e {{#nome_membro_3}}{{.}}{{/nome_membro_3}}{{^nome_membro_3}}<span class="placeholder">Terceiro integrante</span>{{/nome_membro_3}}, com orientação de {{#nome_orientador}}{{.}}{{/nome_orientador}}{{^nome_orientador}}<span class="placeholder">Professor orientador</span>{{/nome_orientador}}.</p>
 					</div>
 				</div>
 			</div>
