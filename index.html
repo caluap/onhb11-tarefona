@@ -77,10 +77,10 @@
           class="select-css"
           onchange="changeClass(this, '#color-palette'); changeMap(this)"
         >
-          <option value="sol-de-segunda">Sol de segunda</option>
-          <option value="paisagem-celta">Paisagem celta</option>
-          <option value="sol-de-sabado">Sol de sábado</option>
-          <option value="a-solidao-das-pedras">A solidão das pedras</option>
+          <option value="sol_de_segunda">Sol de segunda</option>
+          <option value="paisagem_celta">Paisagem celta</option>
+          <option value="sol_de_sabado">Sol de sábado</option>
+          <option value="a_solidao_das_pedras">A solidão das pedras</option>
         </select>
       </div>
       <div class="button-container">
@@ -90,23 +90,14 @@
     <div id="here-comes-treble"></div>
     <script>
       function changeMap(who) {
-        let iChangedTheOriginalOrderHenceThisStupidConversionArray = [
-          2,
-          3,
-          1,
-          4
-        ];
-        let iNewImg =
-          iChangedTheOriginalOrderHenceThisStupidConversionArray[
-            who.selectedIndex
-          ];
+        let newFolder = who.value;
         let currentSrc = $("#state-map").attr("src");
-        let iStr = currentSrc.indexOf("mapa_cor") + "mapa_cor".length;
-        let newStr =
-          currentSrc.substring(0, iStr) +
-          iNewImg +
-          currentSrc.substring(iStr + 1);
-        $("#state-map").attr("src", newStr);
+        let state = currentSrc.substring(
+          currentSrc.length - 6,
+          currentSrc.length
+        );
+        let newSrc = "img/states/" + newFolder + "/" + state;
+        $("#state-map").attr("src", newSrc);
       }
       function changeClass(who, affectedDiv) {
         $(affectedDiv)

@@ -152,31 +152,31 @@ body {
 }
 
 @mixin var-color($i, $alpha: 1) {
-  @at-root .sol-de-sabado & {
+  @at-root .sol_de_sabado & {
     color: transparentize(nth(nth($palettes, 1), $i), 1-$alpha);
   }
-  @at-root .sol-de-segunda & {
+  @at-root .sol_de_segunda & {
     color: transparentize(nth(nth($palettes, 2), $i), 1-$alpha);
   }
-  @at-root .paisagem-celta & {
+  @at-root .paisagem_celta & {
     color: transparentize(nth(nth($palettes, 3), $i), 1-$alpha);
   }
-  @at-root .a-solidao-das-pedras & {
+  @at-root .a_solidao_das_pedras & {
     color: transparentize(nth(nth($palettes, 4), $i), 1-$alpha);
   }
 }
 
 @mixin var-bgcolor($i, $alpha: 1) {
-  @at-root .sol-de-sabado & {
+  @at-root .sol_de_sabado & {
     background-color: transparentize(nth(nth($palettes, 1), $i), 1-$alpha);
   }
-  @at-root .sol-de-segunda & {
+  @at-root .sol_de_segunda & {
     background-color: transparentize(nth(nth($palettes, 2), $i), 1-$alpha);
   }
-  @at-root .paisagem-celta & {
+  @at-root .paisagem_celta & {
     background-color: transparentize(nth(nth($palettes, 3), $i), 1-$alpha);
   }
-  @at-root .a-solidao-das-pedras & {
+  @at-root .a_solidao_das_pedras & {
     background-color: transparentize(nth(nth($palettes, 4), $i), 1-$alpha);
   }
 }
@@ -635,16 +635,16 @@ img {
           }
           top: 0;
           bottom: -$b_w * 2;
-          @at-root .sol-de-sabado & {
+          @at-root .sol_de_sabado & {
             border-left: $b_w dotted nth(nth($palettes, 1), 2);
           }
-          @at-root .sol-de-segunda & {
+          @at-root .sol_de_segunda & {
             border-left: $b_w dotted nth(nth($palettes, 2), 2);
           }
-          @at-root .paisagem-celta & {
+          @at-root .paisagem_celta & {
             border-left: $b_w dotted nth(nth($palettes, 3), 2);
           }
-          @at-root .a-solidao-das-pedras & {
+          @at-root .a_solidao_das_pedras & {
             border-left: $b_w dotted nth(nth($palettes, 4), 2);
           }
         }
@@ -665,16 +665,16 @@ img {
 
           border-radius: 50%;
 
-          @at-root .sol-de-sabado & {
+          @at-root .sol_de_sabado & {
             border: $b_w solid nth(nth($palettes, 1), 2);
           }
-          @at-root .sol-de-segunda & {
+          @at-root .sol_de_segunda & {
             border: $b_w solid nth(nth($palettes, 2), 2);
           }
-          @at-root .paisagem-celta & {
+          @at-root .paisagem_celta & {
             border: $b_w solid nth(nth($palettes, 3), 2);
           }
-          @at-root .a-solidao-das-pedras & {
+          @at-root .a_solidao_das_pedras & {
             border: $b_w solid nth(nth($palettes, 4), 2);
           }
         }
@@ -763,16 +763,16 @@ img {
     position: absolute;
     top: -$m/2;
     width: $m;
-    @at-root .sol-de-sabado & {
+    @at-root .sol_de_sabado & {
       border-top: 3px solid nth(nth($palettes, 1), 1);
     }
-    @at-root .sol-de-segunda & {
+    @at-root .sol_de_segunda & {
       border-top: 3px solid nth(nth($palettes, 2), 1);
     }
-    @at-root .paisagem-celta & {
+    @at-root .paisagem_celta & {
       border-top: 3px solid nth(nth($palettes, 3), 1);
     }
-    @at-root .a-solidao-das-pedras & {
+    @at-root .a_solidao_das_pedras & {
       border-top: 3px solid nth(nth($palettes, 4), 1);
     }
   }
@@ -1659,16 +1659,16 @@ img {
           left: calc(#{percentage(-1/6/2)} + 2px);
           bottom: -15px;
           top: 5px + 4px;
-          @at-root .sol-de-sabado & {
+          @at-root .sol_de_sabado & {
             border-left: 1px solid nth(nth($palettes, 1), 2);
           }
-          @at-root .sol-de-segunda & {
+          @at-root .sol_de_segunda & {
             border-left: 1px solid nth(nth($palettes, 2), 2);
           }
-          @at-root .paisagem-celta & {
+          @at-root .paisagem_celta & {
             border-left: 1px solid nth(nth($palettes, 3), 2);
           }
-          @at-root .a-solidao-das-pedras & {
+          @at-root .a_solidao_das_pedras & {
             border-left: 1px solid nth(nth($palettes, 4), 2);
           }
         }
