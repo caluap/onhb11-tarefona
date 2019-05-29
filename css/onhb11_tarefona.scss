@@ -1382,8 +1382,9 @@ img {
       .caption {
         position: absolute;
         bottom: $m;
+        width: percentage(9/15);
         @media only screen and (min-width: $mobile) {
-          left: percentage(2/21);
+          left: percentage(1/17);
         }
         @media only screen and (max-width: $mobile) {
           left: percentage(1/17);
@@ -1393,7 +1394,9 @@ img {
         font-weight: 400;
         font-style: italic;
         @include var-color(2);
-        font-size: 17px;
+        mix-blend-mode: multiply;
+        font-size: 15px;
+        line-height: 19px;
         &:before {
           content: "↗";
           padding-right: $m/2;
