@@ -894,6 +894,26 @@ img {
       padding: percentage(1/17);
       padding-left: percentage(3/17);
     }
+
+    .img2-caption {
+      @extend .small-text;
+      margin-top: $m/4;
+      padding: 0 $m $m percentage(3/17);
+      p:before {
+        content: "Legenda da imagem: ";
+        padding-right: $m/2;
+        opacity: 0.6;
+      }
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        top: -$m/2;
+        width: percentage(2/17);
+        border-bottom: 1px solid black;
+        opacity: 0.5;
+      }
+    }
   }
   #page4 {
     display: grid;
