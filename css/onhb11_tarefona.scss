@@ -1,6 +1,7 @@
 @import "01-jeanluc.scss";
 @import "02-infini.scss";
 @import "03-syne.scss";
+@import "blokk.scss";
 
 $m: 24px;
 $mobile: 560px;
@@ -19,6 +20,11 @@ $palettes: (
 body {
   background-color: #ddd;
   background-image: url(../img/bg_tile.png);
+}
+
+.placeholder {
+  font-size: 12px;
+  font-family: "BLOKK";
 }
 
 #font-credits {
