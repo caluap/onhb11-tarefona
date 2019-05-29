@@ -665,6 +665,38 @@ img {
   font-family: "Infini", sans-serif;
   font-size: 11px;
 
+  .caption-title {
+    padding-right: $m/3;
+    opacity: 0.5;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-style: normal;
+  }
+
+  .caption-text {
+    @extend .small-text;
+    font-style: italic;
+  }
+
+  .caption-bar {
+    content: "";
+    position: absolute;
+    top: -$m/2;
+    width: $m;
+    @at-root .sol-de-sabado & {
+      border-top: 3px solid nth(nth($palettes, 1), 1);
+    }
+    @at-root .sol-de-segunda & {
+      border-top: 3px solid nth(nth($palettes, 2), 1);
+    }
+    @at-root .paisagem-celta & {
+      border-top: 3px solid nth(nth($palettes, 3), 1);
+    }
+    @at-root .a-solidao-das-pedras & {
+      border-top: 3px solid nth(nth($palettes, 4), 1);
+    }
+  }
+
   .default-text {
     p {
       font-family: "Infini", sans-serif;
@@ -801,34 +833,13 @@ img {
       .img1-caption {
         p:before {
           content: "Página oposta";
-          padding-right: $m/3;
-          opacity: 0.5;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-          font-style: normal;
+          @extend .caption-title;
         }
         &:before {
-          content: "";
-          position: absolute;
-          left: 0;
-          top: -$m/2;
-          width: $m;
-          @at-root .sol-de-sabado & {
-            border-top: 3px solid nth(nth($palettes, 1), 2);
-          }
-          @at-root .sol-de-segunda & {
-            border-top: 3px solid nth(nth($palettes, 2), 2);
-          }
-          @at-root .paisagem-celta & {
-            border-top: 3px solid nth(nth($palettes, 3), 2);
-          }
-          @at-root .a-solidao-das-pedras & {
-            border-top: 3px solid nth(nth($palettes, 4), 2);
-          }
+          @extend .caption-bar;
         }
+        @extend .caption-text;
         position: relative;
-        @extend .small-text;
-        font-style: italic;
         align-self: end;
         grid-column: 3;
         grid-row: 2;
@@ -935,22 +946,16 @@ img {
     }
 
     .img2-caption {
-      @extend .small-text;
+      @extend .caption-text;
       margin-top: $m/4;
       padding: 0 $m $m percentage(3/17);
       p:before {
-        content: "Legenda da imagem: ";
-        padding-right: $m/2;
-        opacity: 0.6;
+        content: "Legenda da imagem";
+        @extend .caption-title;
       }
       position: relative;
       &:after {
-        content: "";
-        position: absolute;
-        top: -$m/2;
-        width: percentage(2/17);
-        border-bottom: 1px solid black;
-        opacity: 0.5;
+        @extend .caption-bar;
       }
     }
   }
