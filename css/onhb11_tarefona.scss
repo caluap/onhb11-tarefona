@@ -398,17 +398,21 @@ img {
       @media only screen and (min-width: $mobile) {
         grid-column: 3;
       }
-      @media only screen and (max-width: $mobile) {
-        padding-bottom: $m * 4;
-      }
     }
 
     .img1-caption {
-      grid-column: 3;
-      align-self: end;
+      @media only screen and (min-width: $mobile) {
+        grid-column: 3;
+        align-self: end;
+        display: flex;
+        justify-content: flex-end;
+      }
 
-      display: flex;
-      justify-content: flex-end;
+      @media only screen and (max-width: $mobile) {
+        margin-left: percentage(1/2);
+        width: percentage(1/2);
+        padding-top: $m * 2;
+      }
       width: 100%;
 
       p {
@@ -416,7 +420,12 @@ img {
         @extend .small-text;
         &:before {
           opacity: 0.6;
-          content: "Página oposta: ";
+          @media only screen and (min-width: $mobile) {
+            content: "Página oposta: ";
+          }
+          @media only screen and (max-width: $mobile) {
+            content: "Página anterior: ";
+          }
           padding-right: $m/3;
         }
       }
