@@ -6,7 +6,9 @@
 					<h1>Excluídos <br>da História</h1>
 					<h2>{{#nome_personalidade}}{{.}}{{/nome_personalidade}}{{^nome_personalidade}}<span class="placeholder">...... .. ....... ......</span>{{/nome_personalidade}}<span class="born-and-died">{{#ano_nascimento}}{{.}}{{/ano_nascimento}}{{^ano_nascimento}}<span class="placeholder">..</span> {{/ano_nascimento}}—{{#ano_morte}}{{.}}{{/ano_morte}}{{^ano_morte}} <span class="placeholder">..</span>{{/ano_morte}}</span></h2>
 				</header>
-				<img src="img/examples/main.jpg">
+				{{#img_capa_versions.original.path}}
+					<img src="{{img_capa_versions.original.path}}">
+				{{/img_capa_versions.original.path}}
 			</div>
 
 			<div class="pages" id="page2">
@@ -45,7 +47,9 @@
 			<div class="pages" id="page3">
 				<header>
 						<div class="img-container">
-							<img src="img/examples/vida_evento.jpg">
+							{{#img_uma_vida_um_evento_versions.original.path}}
+								<img src="{{img_uma_vida_um_evento_versions.original.path}}">
+							{{/img_uma_vida_um_evento_versions.original.path}}
 						</div>
 				</header>
 				<div class="uma-vida-um-evento">
@@ -150,7 +154,9 @@
 					</ul>
 				</div>
 				<div class="the-team">
-					<img src="img/examples/equipe.jpg">
+					{{#img_equipe_versions.original.path}}
+						<img src="{{img_equipe_versions.original.path}}">
+					{{/img_equipe_versions.original.path}}
 					<div class="about-the-team">
 						<p>Projeto criado pela equipe “{{#nome_equipe}}{{.}}{{/nome_equipe}}{{^nome_equipe}}<span class="placeholder">. .... .. ... ......</span>{{/nome_equipe}}”, de {{#cidade}}{{.}}{{/cidade}}{{^cidade}}<span class="placeholder">. .... .. ... ......</span>{{/cidade}}, {{#estado}}{{.}}{{/estado}}{{^estado}}<span class="placeholder">..</span>{{/estado}}</p>
 						<p>Membros: {{#nome_membro_1}}{{.}}{{/nome_membro_1}}{{^nome_membro_1}}<span class="placeholder">........ ..........</span>{{/nome_membro_1}}, {{#nome_membro_2}}{{.}}{{/nome_membro_2}}{{^nome_membro_2}}<span class="placeholder">....... ..........</span>{{/nome_membro_2}} e {{#nome_membro_3}}{{.}}{{/nome_membro_3}}{{^nome_membro_3}}<span class="placeholder">........ ..........</span>{{/nome_membro_3}}, com orientação de {{#nome_orientador}}{{.}}{{/nome_orientador}}{{^nome_orientador}}<span class="placeholder">......... ..........</span>{{/nome_orientador}}.</p>
