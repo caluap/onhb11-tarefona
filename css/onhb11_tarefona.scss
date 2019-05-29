@@ -680,7 +680,7 @@ img {
     @extend .default-text;
     p {
       font-size: 11px;
-      line-height: 14px;
+      line-height: 16px;
     }
   }
 
@@ -774,12 +774,14 @@ img {
         grid-column: 2;
         display: grid;
         grid-template-columns: 6fr 1fr 8fr;
+        grid-auto-rows: min-content auto;
         padding-bottom: percentage(1/15);
       }
       position: relative;
       z-index: 4;
       header {
         grid-column: 1;
+        grid-row: 1;
         h3 {
           @include var-color(1);
           font-family: "Yatra One", cursive;
@@ -796,8 +798,44 @@ img {
           }
         }
       }
+      .img1-caption {
+        p:before {
+          content: "Página oposta";
+          padding-right: $m/3;
+          opacity: 0.5;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
+          font-style: normal;
+        }
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: -$m/2;
+          width: $m;
+          @at-root .sol-de-sabado & {
+            border-top: 3px solid nth(nth($palettes, 1), 2);
+          }
+          @at-root .sol-de-segunda & {
+            border-top: 3px solid nth(nth($palettes, 2), 2);
+          }
+          @at-root .paisagem-celta & {
+            border-top: 3px solid nth(nth($palettes, 3), 2);
+          }
+          @at-root .a-solidao-das-pedras & {
+            border-top: 3px solid nth(nth($palettes, 4), 2);
+          }
+        }
+        position: relative;
+        @extend .small-text;
+        font-style: italic;
+        align-self: end;
+        grid-column: 3;
+        grid-row: 2;
+      }
       .main-text {
         grid-column: 3;
+        grid-row: 1 / span 2;
         @extend .default-text;
         @media only screen and (max-width: $mobile) {
           margin-bottom: $m * 4;
@@ -807,6 +845,7 @@ img {
     .map {
       position: absolute;
       z-index: 1;
+
       bottom: 0;
       left: 0;
       @media only screen and (min-width: $mobile) {
