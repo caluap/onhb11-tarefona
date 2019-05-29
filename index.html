@@ -14,7 +14,7 @@
     <meta name="theme-color" content="#cb0772" />
 
     <script>
-      var viewUrl = "json/teste_tarefona.json";
+      var viewUrl = "json/tarefona_excluidos.json";
       let templateUrl = "template.mustache";
 
       jQuery(function($) {
@@ -28,7 +28,7 @@
           Mustache.parse(template[0]);
 
           var i,
-            subData = data["PohDoneActivity"]["submitted_data"];
+            subData = data;
           for (i in subData) {
             if (i.match(/^img_/)) {
               try {
