@@ -1086,6 +1086,29 @@ img {
     }
   }
 
+  .small-text {
+    @extend .default-text;
+    font-size: 11px;
+    line-height: 15px;
+  }
+
+  .caption-title {
+    font-family: "Syne", cursive;
+    font-weight: 400;
+    font-style: italic;
+    display: block;
+    font-size: 17px;
+    margin-bottom: $m/8;
+    @include var-color(1);
+  }
+
+  .caption-text {
+    font-family: "Gangster Grotesk", sans-serif;
+    p {
+      @extend .small-text;
+    }
+  }
+
   .big-title {
     font-family: "Gangster Grotesk", sans-serif;
     font-weight: 400;
@@ -1288,10 +1311,21 @@ img {
       }
       .main-text {
         grid-column: 1;
-        grid-row: 1;
+        grid-row: 1 / span 2;
         @extend .default-text;
         @media only screen and (max-width: $mobile) {
           margin-top: $m;
+        }
+      }
+
+      .img1-caption {
+        grid-column: 3;
+        align-self: end;
+        @extend .caption-text;
+        p:before {
+          @extend .caption-title;
+          content: "← página oposta";
+          transform: translateX(-2ch);
         }
       }
     }
@@ -1543,8 +1577,7 @@ img {
           padding: 0 $m/3;
         }
         p {
-          font-size: 11px;
-          line-height: 15px;
+          @extend .small-text;
           & + p {
             margin-top: 7px;
           }
