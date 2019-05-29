@@ -375,7 +375,7 @@ img {
         width: 50%;
         font-size: 23px;
         line-height: 25px;
-        span {
+        span.born-and-died {
           margin-top: $m * 8/5;
           font-size: 43px;
         }
@@ -386,7 +386,7 @@ img {
 
         font-size: 18px;
         line-height: 21px;
-        span {
+        span.born-and-died {
           margin-top: $m * 8/5 * $mob_shrink;
           font-size: 21px;
         }
@@ -395,7 +395,7 @@ img {
       color: white;
       font-style: italic;
       font-weight: bold;
-      span {
+      span.born-and-died {
         position: absolute;
         display: block;
         font-family: "JeanLucWeb-Thin", sans-serif;
@@ -1328,14 +1328,14 @@ img {
         @media only screen and (min-width: $mobile) {
           font-size: 34px;
           line-height: 36px;
-          span {
+          span.born-and-died {
             margin-top: $m/2;
           }
         }
         @media only screen and (max-width: $mobile) {
           font-size: 24px;
           line-height: 27px;
-          span {
+          span.born-and-died {
             margin-top: $m/4;
           }
         }
@@ -1354,7 +1354,7 @@ img {
           top: $m * $mob_shrink;
         }
         z-index: 3;
-        span {
+        span.born-and-died {
           display: block;
           font-family: "Syne", cursive;
           font-weight: 400;
