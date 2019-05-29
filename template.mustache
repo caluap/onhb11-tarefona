@@ -4,7 +4,12 @@
 {{^paleta_cores}}
 	<div id="color-palette" class="sol-de-segunda">
 {{/paleta_cores}}
-	<div id="layout-template" class="jean-luc">
+	{{#layout}}
+		<div id="layout-template" class="{{.}}">
+	{{/layout}}
+	{{^layout}}
+		<div id="layout-template" class="jean-luc">
+	{{/layout}}
 		<div class="spreads" id="spread1">
 			<div class="pages" id="page1">
 				<header>
