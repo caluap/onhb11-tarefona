@@ -29,12 +29,12 @@
 					{{/texto_principal}}
 					</div>
 					<div class="img1-caption">
-						<p>Maria Leite, fotografada minutos antes de levar a machadada que quase lhe tirou a vida. Quase? Sim, quase.</p>
+						<p>{{#legenda_capa}}{{.}}{{/legenda_capa}}{{^legenda_capa}}<span class="placeholder">...... ... ..... ... .. ..... .. .......</span>{{/legenda_capa}}</p>
 					</div>
 				</article>
 				<div class="map">
 					<img id="state-map" src="img/states/mapa_cor2/CE.png">
-					<p class="caption">São José das Couves Frescas e das Couves não tão Frescas Assim, CE</p>
+					<p class="caption">{{#cidade}}{{.}}{{/cidade}}{{^cidade}}<span class="placeholder">... .... ... ...</span>{{/cidade}}, {{#estado}}{{.}}{{/estado}}{{^estado}}<span class="placeholder">..</span>{{/estado}}</p>
 				</div>
 			</div>
 
@@ -62,7 +62,7 @@
 					{{/uma_vida_um_evento}}
 				</div>
 				<div class="img2-caption">
-					<p>Maria R.A. Leite encontra-se com seus muitos seguidores logo após a machadada. Notem: ela ainda anda!</p>
+					<p>{{#legenda_uma_vida_um_evento}}{{.}}{{/legenda_uma_vida_um_evento}}{{^legenda_uma_vida_um_evento}}<span class="placeholder">...... ... ..... ... .. ..... .. .......</span>{{/legenda_uma_vida_um_evento}}</p>
 				</div>
 			</div>
 
