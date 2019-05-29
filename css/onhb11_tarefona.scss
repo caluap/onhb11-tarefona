@@ -348,7 +348,7 @@ img {
         width: 50%;
         font-size: 38px;
         line-height: 34px;
-        padding: $m;
+        padding: $m * 2/3 $m;
         bottom: $m;
 
         br {
@@ -371,7 +371,7 @@ img {
       position: absolute;
       @media only screen and (min-width: $mobile) {
         top: $m;
-        padding: $m;
+        padding: $m * 2/3 $m;
         width: 50%;
         font-size: 23px;
         line-height: 25px;
