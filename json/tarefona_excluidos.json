@@ -1,5 +1,5 @@
 {
-  "viva": ["morta"],
+  "viva": ["viva"],
   "ano_01": ["1978"],
   "ano_02": ["2001"],
   "ano_03": ["2005"],
@@ -10,6 +10,7 @@
   "estado": ["PR"],
   "layout": ["infini"],
   "titulo": ["A moli sama kulupu anu!"],
+  "img_capa": "4",
   "pergunta": [
     "Jo wan kule loje sitelen, len kule kasi kalama ni, olin wawa akesi tu mun. ijo e olin nasin. pini tenpo pimeja?"
   ],
@@ -29,6 +30,7 @@
   "subtitulo": [
     "Sep mi pona waso wawa.  Mod vi sewi loje, kule kama kalama uta mu."
   ],
+  "img_equipe": "3",
   "nome_equipe": ["Sama wawa sina tu. Sina tu!"],
   "descricao_01": ["Nasce em New Brunswick, Canadá, 1 de novembro de 1978."],
   "descricao_02": [
@@ -40,11 +42,14 @@
   ],
   "descricao_05": ["Ma ijo akesi linja, pi wan musi conj sewi."],
   "descricao_06": ["Morre em Marte, bem velhinha. A lápide diz: “Telo naso!”."],
+  "legenda_capa": [
+    "Ni ken lipu unpa sinpin. nimi pali sewi mod ko, a pana lukin ike. tu kin noka kalama. ni mun kute prep. o oth noka."
+  ],
   "paleta_cores": ["paisagem_celta"],
   "nome_membro_1": ["Luana Solana"],
   "nome_membro_2": ["Claro Escuro Cinza"],
   "nome_membro_3": ["Mercoles Levoles Tevoles Sinamon"],
-  "ano_nascimento": ["1978"],
+  "ano_nascimento": ["19--"],
   "nome_orientador": ["Professor Sérgio Sérbio Epaminondas Edmundo"],
   "texto_principal": [
     "Unpa sama mu wan, e ali luka pini akesi, en oth sike awen nanpa. ",
@@ -95,5 +100,24 @@
     "- Kasi weka nasin uta ma. ",
     "",
     "Anu open sijelo tu. ma jaki tenpo oth, ali seme poka kepeken mu, suno pona ma tan. ma ijo akesi linja, pi wan musi conj sewi."
-  ]
+  ],
+  "img_uma_vida_um_evento": "2",
+  "legenda_uma_vida_um_evento": [
+    "Olin wawa akesi tu mun. ijo e olin nasin. pini tenpo pimeja tu oth."
+  ],
+  "img_capa_versions": {
+    "original": {
+      "path": "https://prova.olimpiadadehistoria.com.br/view_attach/testes/transfer/img/5ceea571b85fd8.85134422.jpeg"
+    }
+  },
+  "img_equipe_versions": {
+    "original": {
+      "path": "https://prova.olimpiadadehistoria.com.br/view_attach/testes/transfer/img/5ceea506383174.37735366.jpg"
+    }
+  },
+  "img_uma_vida_um_evento_versions": {
+    "original": {
+      "path": "https://prova.olimpiadadehistoria.com.br/view_attach/testes/transfer/img/5ceea4e5bf7be4.79128973.jpg"
+    }
+  }
 }
