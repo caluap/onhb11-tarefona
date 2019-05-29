@@ -56,9 +56,9 @@
 			<div class="pages" id="page4">
 				<div class="question_answer">
 					<h3>Pergunta</h3>
-					<p class="question">De que maneira Rosária Leite ajudou a esgrima nacional?</p>
+					<p class="question">{{#pergunta}}{{.}}{{/pergunta}}{{^pergunta}}<span class="placeholder">Este aqui é o espaço onde, eventualmente, vocês devem colocar a pergunta de vocês.</span>{{/pergunta}}</p>
 					<h3>Resposta</h3>
-					<p class="answer">Aquia dolectet et voluptia inci offici autem laut vellaborunt moluptatibus exceaqui sequi cum, sant dundionest hic tem facest, omni optatio nsequis quibus, sunt eos dolo incieni hicimol oribus eaquibus doluptamus ipsae dolo blam sit volore corporrum.</p>
+					<p class="answer">{{#resposta}}{{.}}{{/resposta}}{{^resposta}}<span class="placeholder">E, logo abaixo, eis aqui o espaço para a resposta para essa mesma pergunta. Dúvidas? Confiram as instruções da tarefa!</span>{{/resposta}}</p>
 				</div>
 				<div class="timeline">
 					<ul>
