@@ -549,14 +549,16 @@ img {
     }
 
     .timeline {
+      $mob_tim: $m * 3/2;
       @media only screen and (min-width: $mobile) {
         grid-column: 4;
+        padding-left: percentage(1/6);
       }
 
       @media only screen and (max-width: $mobile) {
         margin-top: $m;
+        padding-left: $mob_tim;
       }
-      padding-left: percentage(1/6);
       font-family: "IBM Plex Mono";
       line-height: 13px;
       h3 {
@@ -572,7 +574,12 @@ img {
           content: "";
         }
         &:before {
-          left: calc(-20% + #{$m * 2 / 3 / 2});
+          @media only screen and (min-width: $mobile) {
+            left: calc(-20% + #{$m * 2 / 3 / 2});
+          }
+          @media only screen and (max-width: $mobile) {
+            left: calc(-#{$mob_tim} + #{$m * 2 / 3 / 2});
+          }
           top: 0;
           bottom: -$b_w * 2;
           @at-root .sol-de-sabado & {
@@ -594,7 +601,12 @@ img {
           width: calc(#{$m * 2 / 3} - #{$b_w});
           height: calc(#{$m * 2 / 3} - #{$b_w});
 
-          left: -20%;
+          @media only screen and (min-width: $mobile) {
+            left: -20%;
+          }
+          @media only screen and (max-width: $mobile) {
+            left: -$mob_tim;
+          }
           top: 0;
           transform: translateY(-$b_w);
 
