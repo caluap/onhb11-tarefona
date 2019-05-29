@@ -21,6 +21,48 @@ body {
   background-image: url(../img/bg_tile.png);
 }
 
+#font-credits {
+  margin-top: $m * 5;
+  padding: $m/2;
+
+  text-align: right;
+
+  box-sizing: border-box;
+  @at-root .jean-luc & {
+    font-size: 10px;
+  }
+  @at-root .infini & {
+    font-size: 11px;
+  }
+  @at-root .syne & {
+    font-size: 11px;
+  }
+  line-height: 15px;
+  width: 100%;
+  &:before {
+    opacity: 0.6;
+    @media only screen {
+      content: "Créditos da tipografia";
+    }
+    display: block;
+  }
+  &:after {
+    opacity: 0.45;
+    @media only screen {
+      white-space: pre;
+      @at-root .jean-luc & {
+        content: "Jean-Luc,\00a0por Carvalho Bernau\AIBM Plex,\00a0por Mike Abbink e Bold Monday";
+      }
+      @at-root .infini & {
+        content: "Infini,\00a0por Sandrine Nugue para o Centre National des Arts Plastiques\AYatra One,\00a0por Catherine Leigh Schmidt";
+      }
+      @at-root .syne & {
+        content: "Syne,\00a0por Lucas Descroix\AGangster Grotesk,\00a0por Adrien Midzic & Fresh Fonts";
+      }
+    }
+  }
+}
+
 #toolbar {
   height: $m * 5/4;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
