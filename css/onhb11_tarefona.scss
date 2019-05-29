@@ -859,7 +859,12 @@ img {
       }
       .img1-caption {
         p:before {
-          content: "Página oposta";
+          @media only screen and (min-width: $mobile) {
+            content: "Página oposta";
+          }
+          @media only screen and (max-width: $mobile) {
+            content: "Página anterior";
+          }
           @extend .caption-title;
         }
         &:before {
