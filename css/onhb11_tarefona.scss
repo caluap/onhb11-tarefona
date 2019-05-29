@@ -673,6 +673,9 @@ img {
         mix-blend-mode: luminosity;
       }
       .about-the-team {
+        @media only screen and (max-width: $mobile) {
+          margin-top: $m/2;
+        }
         p {
           font-family: "IBM Plex Mono", monospace;
           @extend .small-text;
