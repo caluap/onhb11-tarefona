@@ -414,9 +414,10 @@ img {
       p {
         font-family: "IBM Plex Mono", monospace;
         @extend .small-text;
-        &:after {
+        &:before {
           opacity: 0.6;
-          content: " (página anterior)";
+          content: "Página oposta: ";
+          padding-right: $m/3;
         }
       }
     }
@@ -1432,7 +1433,7 @@ img {
       padding: percentage(1/17);
       p:before {
         @extend .caption-title;
-        content: "↑ imagem em cima";
+        content: "↑ legenda da imagem";
         transform: translate(-1.3ch);
       }
     }
