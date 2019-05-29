@@ -62,26 +62,78 @@
 				</div>
 				<div class="timeline">
 					<ul>
+						{{^ano_01}}
+							{{^ano_02}}
+								{{^ano_03}}
+									{{^ano_04}}
+										{{^ano_05}}
+											{{^ano_06}}
+												<li>
+													<h3><span class="placeholder">XXXX</span></h3>
+													<p><span class="placeholder">Aqui eventualmente teremos o primeiro evento</span></p>
+												</li>
+												<li>
+													<h3><span class="placeholder">XXXX</span></h3>
+													<p><span class="placeholder">E aqui, então, o segundo.</span></p>
+												</li>
+												<li>
+													<h3><span class="placeholder">XXXX</span></h3>
+													<p><span class="placeholder">Eis o espaço para o terceiro evento!</span></p>
+												</li>
+												<li>
+													<h3><span class="placeholder">XXXX</span></h3>
+													<p><span class="placeholder">Se chegarmos ao quarto evento estaremos bem.</span></p>
+												</li>
+												<li>
+													<h3><span class="placeholder">XXXX</span></h3>
+													<p><span class="placeholder">Quinto evento? Quanta empolgação!</span></p>
+												</li>
+												<li>
+													<h3><span class="placeholder">XXXX</span></h3>
+													<p><span class="placeholder">Parabéns: você completou a linha do tempo!</span></p>
+												</li>
+											{{/ano_06}}
+										{{/ano_05}}
+									{{/ano_04}}
+								{{/ano_03}}
+							{{/ano_02}}
+						{{/ano_01}}
+						{{#ano_01}}
 						<li>
-							<h3>1870</h3>
-							<p>Nasce em Curitiba, Paraná</p>
+							<h3>{{ano_01}}</h3>
+							<p>{{descricao_01}}</p>
 						</li>
+						{{/ano_01}}
+						{{#ano_02}}
 						<li>
-							<h3>1889</h3>
-							<p>Funda a escola de esgrima brasileira</p>
+							<h3>{{ano_02}}</h3>
+							<p>{{descricao_02}}</p>
 						</li>
+						{{/ano_02}}
+						{{#ano_03}}
 						<li>
-							<h3>1901</h3>
-							<p>Ganha campeonato mundial de dança de salão</p>
+							<h3>{{ano_03}}</h3>
+							<p>{{descricao_03}}</p>
 						</li>
+						{{/ano_03}}
+						{{#ano_04}}
 						<li>
-							<h3>1911</h3>
-							<p>Mata João das Couves na disputa do que seria chamada a “batalha das verduras”</p>
+							<h3>{{ano_04}}</h3>
+							<p>{{descricao_04}}</p>
 						</li>
+						{{/ano_04}}
+						{{#ano_05}}
 						<li>
-							<h3>1922</h3>
-							<p>Morre de um AVC em Teresina, Piauí</p>
+							<h3>{{ano_05}}</h3>
+							<p>{{descricao_05}}</p>
 						</li>
+						{{/ano_05}}
+						{{#ano_06}}
+						<li>
+							<h3>{{ano_06}}</h3>
+							<p>{{descricao_06}}</p>
+						</li>
+						{{/ano_06}}
 					</ul>
 				</div>
 				<div class="the-team">
