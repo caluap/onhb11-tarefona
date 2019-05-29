@@ -1131,7 +1131,8 @@ img {
     font-weight: 400;
     font-style: italic;
     display: block;
-    font-size: 17px;
+    font-size: 15px;
+    line-height: 19px;
     margin-bottom: $m/8;
     @include var-color(1);
   }
@@ -1358,8 +1359,17 @@ img {
         @extend .caption-text;
         p:before {
           @extend .caption-title;
-          content: "← página oposta";
-          transform: translateX(-2ch);
+          margin-bottom: $m/4;
+          @media only screen and (min-width: $mobile) {
+            content: "← página oposta";
+            transform: translateX(-2ch);
+          }
+          @media only screen and (max-width: $mobile) {
+            content: "↖ página anterior";
+          }
+        }
+        @media only screen and (max-width: $mobile) {
+          margin-top: $m;
         }
       }
     }
@@ -1382,12 +1392,13 @@ img {
       .caption {
         position: absolute;
         bottom: $m;
-        width: percentage(9/15);
         @media only screen and (min-width: $mobile) {
+          width: percentage(9/15);
           left: percentage(1/17);
         }
         @media only screen and (max-width: $mobile) {
           left: percentage(1/17);
+          right: percentage(1/17);
         }
 
         font-family: "Syne", cursive;
@@ -1398,8 +1409,13 @@ img {
         font-size: 15px;
         line-height: 19px;
         &:before {
-          content: "↗";
-          padding-right: $m/2;
+          @media only screen and (min-width: $mobile) {
+            content: "↗";
+            padding-right: $m/2;
+          }
+          @media only screen and (max-width: $mobile) {
+            content: "↗\00a0";
+          }
         }
       }
     }
@@ -1470,7 +1486,10 @@ img {
       p:before {
         @extend .caption-title;
         content: "↑ legenda da imagem";
-        transform: translate(-1.3ch);
+        margin-bottom: $m/4;
+        @media only screen and (min-width: $mobile) {
+          transform: translate(-1.3ch);
+        }
       }
     }
   }
