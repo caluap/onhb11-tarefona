@@ -12,14 +12,21 @@
 			<div class="pages" id="page2">
 				<article>
 					<header>
-						<h3>A cajuína cristalina em Teresina</h3>
-						<h4>Pérolas banhadas em amianto descontroem um palhaço arrivista.</h4>
+						<h3>{{#titulo}}{{.}}{{/titulo}}{{^titulo}}<span class="placeholder">Eis aqui um espaço reservado para o título!</span>{{/titulo}}</h3>
+						<h4>{{#subtitulo}}{{.}}{{/subtitulo}}{{^subtitulo}}<span class="placeholder">E aqui, logo abaixo, deve vir o subtítulo</span>{{/subtitulo}}</h4>
 					</header>
 					<div class="main-text">
-						<p>Aquia dolectet et voluptia inci offici autem laut vellaborunt moluptatibus exceaqui sequi cum, sant dundionest hic tem facest, omni optatio nsequis quibus, sunt eos dolo incieni hicimol oribus eaquibus doluptamus ipsae dolo blam sit volore corporrum lit iliqui di dusandu ndaepre experchil eumqui aceatur, sus et autatquis solute praturia volor adit offici autectium fugit, ut quamusdam nulpa conet oRi nos eos es mod que aliquatusam re nati iducium que essuntius endandi que soluptat.</p>
-						<p>Giandias et alitate nditatur?</p>
-						<p>Nequi sedit, ilignatiatur aperisimus et omnihil landus et exeratas est quam cus maximus quia sunt ut explat.</p>
-						<p>Danihitatet dolorpore, ium ventiur, ut lit eiusandam, utRuntur ad et perrum quate suntio. Poriatem eum quis conectem qui a volupta inum estem cus.Elenis conecatus acculpa nonserecus et volorio necaepere pre nulluptat que explabo. Nest, te corerrum rehent magni simusam denime int que eos am, officab orepudi tatatium et voluptatur.</p>
+						
+					{{#texto_principal}}
+						<p>{{.}}</p>
+					{{/texto_principal}}
+					{{^texto_principal}}
+						<p class="placeholder">
+							Este é o texto principal. Vou colocar abaixo algo que não tem nada a ver com nada — a ideia aqui é apenas preencher espaço e, com isso, demonstrar que aspecto esse layout pode ter quando há textos nele. Tirei daqui: bit.ly/__tarefona__
+						</p>
+						<p class="placeholder">Nearly every morning, a certain woman in our community comes running out of her house with her face white and her overcoat flapping wildly. She cries out, “Emergency, emergency,” and one of us runs to her and holds her until her fears are calmed. We know she is making it up; nothing has really happened to her. </p>
+						<p class="placeholder">But we understand, because there is hardly one of us who has not been moved at some time to do just what she has done, and every time, it has taken all our strength, and even the strength of our friends and families too, to quiet us.</p>
+					{{/texto_principal}}
 					</div>
 					<div class="img1-caption">
 						<p>Maria Leite, fotografada minutos antes de levar a machadada que quase lhe tirou a vida. Quase? Sim, quase.</p>
