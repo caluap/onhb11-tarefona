@@ -870,6 +870,11 @@ img {
         align-self: end;
         grid-column: 3;
         grid-row: 2;
+
+        @media only screen and (max-width: $mobile) {
+          width: 50%;
+          margin-left: 50%;
+        }
       }
       .main-text {
         grid-column: 3;
@@ -917,12 +922,14 @@ img {
       .caption {
         position: absolute;
         @media only screen and (min-width: $mobile) {
-          bottom: percentage(1/17);
-          left: percentage(1/17);
+          bottom: percentage(1/15);
+          left: percentage(1/10);
+          right: percentage(3/10);
         }
         @media only screen and (max-width: $mobile) {
           left: $m;
           bottom: $m;
+          width: calc(50% - #{2 * $m});
         }
         font-size: 13px;
         line-height: 16px;
