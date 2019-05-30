@@ -4,7 +4,8 @@
 @import "blokk.scss";
 
 $m: 24px;
-$mobile: 560px;
+$mobile: 800px;
+$mini-page: 18 * $m;
 $mob_offset: 1/2;
 $mob_shrink: 2/3;
 
@@ -240,6 +241,7 @@ img {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
   }
   @media only screen and (max-width: $mobile) {
+    max-width: $mini-page;
     width: calc(100% - #{$m * $mob_offset * 2});
     grid-template-columns: 1fr;
     &#spread1 {
@@ -266,7 +268,7 @@ img {
   @media only screen and (min-width: $mobile) {
     min-height: calc(480px * 1.4 - #{$m});
   }
-  @media only screen and (max-width: $mobile) {
+  @media only screen and (max-width: $mini-page) {
     min-height: calc(100vw * 1.4 - #{$m});
   }
   &:after {
