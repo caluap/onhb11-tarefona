@@ -562,8 +562,8 @@ img {
       @media only screen and (min-width: $mobile) {
         columns: 2;
         column-gap: $m;
-        -moz-column-fill: auto; /* Firefox */
-        column-fill: auto;
+        -moz-column-fill: balance; /* Firefox */
+        column-fill: balance;
       }
       p + p {
         text-indent: $m/3;
@@ -1029,8 +1029,8 @@ img {
       @media only screen and (min-width: $mobile) {
         columns: 2;
         column-gap: percentage(1/13);
-        -moz-column-fill: auto; /* Firefox */
-        column-fill: auto;
+        -moz-column-fill: balance; /* Firefox */
+        column-fill: balance;
       }
       @media only screen and (max-width: $mobile) {
         padding-bottom: $m * 2;
@@ -1530,8 +1530,8 @@ img {
       @media only screen and (min-width: $mobile) {
         columns: 2;
         column-gap: percentage(1/14);
-        -moz-column-fill: auto; /* Firefox */
-        column-fill: auto;
+        -moz-column-fill: balance; /* Firefox */
+        column-fill: balance;
       }
       @media only screen and (max-width: $mobile) {
         padding-left: calc(#{percentage(1/17) + #{$m/3}});
