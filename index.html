@@ -57,6 +57,17 @@
           body.show();
           originalLayoutClass = $("#layout-template").attr("class");
           originalPaletteClass = $("#color-palette").attr("class");
+
+          let aux = $(
+            "select option[value=" + originalLayoutClass + "]"
+          ).text();
+          $("select option[value=" + originalLayoutClass + "]").text(
+            "* " + aux + " *"
+          );
+          aux = $("select option[value=" + originalPaletteClass + "]").text();
+          $("select option[value=" + originalPaletteClass + "]").text(
+            "* " + aux + " *"
+          );
         });
       });
     </script>
