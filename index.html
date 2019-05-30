@@ -14,6 +14,7 @@
     <meta name="theme-color" content="#cb0772" />
 
     <script>
+      let originalLayoutClass, originalPaletteClass;
       var viewUrl = "json/tarefona_excluidos.json";
       let templateUrl = "template.mustache";
 
@@ -54,6 +55,8 @@
 
           body.html(rendered);
           body.show();
+          originalLayoutClass = $("#layout-template").attr("class");
+          originalPaletteClass = $("#color-palette").attr("class");
         });
       });
     </script>
@@ -61,31 +64,35 @@
   <body>
     <div id="toolbar">
       <div class="form-control">
-        <label>Leiaute</label>
         <select
           class="select-css"
           onchange="changeClass(this, '#layout-template')"
         >
+          <option value="" disabled selected>Opções de leiaute</option>
           <option value="jean-luc">Jean Luc</option>
           <option value="infini">Infini</option>
           <option value="syne">Syne</option>
         </select>
       </div>
       <div class="form-control">
-        <label>Paleta</label>
         <select
           class="select-css"
           onchange="changeClass(this, '#color-palette'); changeMap(this)"
         >
+          <option value="" disabled selected>Opções de cor</option>
           <option value="sol_de_segunda">Sol de segunda</option>
           <option value="paisagem_celta">Paisagem celta</option>
           <option value="sol_de_sabado">Sol de sábado</option>
           <option value="a_solidao_das_pedras">A solidão das pedras</option>
         </select>
       </div>
-      <div class="button-container">
-        <button>Salvar rascunho</button>
-      </div>
+    </div>
+    <div id="there-be-no-saving-here">
+      <p>
+        IMPORTANTE: as mudanças feitas nesta página não serão salvas e servem
+        apenas para visualizar a escolha que **necessariamente** deve ser feita
+        na interface principal de edição.
+      </p>
     </div>
     <div id="here-comes-treble"></div>
     <script>
@@ -103,6 +110,14 @@
         $(affectedDiv)
           .removeClass()
           .addClass(who.value);
+        if (
+          $("#color-palette").attr("class") != originalPaletteClass ||
+          $("#layout-template").attr("class") != originalLayoutClass
+        ) {
+          $("#there-be-no-saving-here").attr("class", "shown-warning");
+        } else {
+          $("#there-be-no-saving-here").removeClass();
+        }
       }
     </script>
   </body>

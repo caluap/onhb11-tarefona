@@ -72,8 +72,28 @@ body {
   }
 }
 
+#there-be-no-saving-here {
+  background: tomato;
+  color: white;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+
+  transition: all 0.5s ease;
+
+  padding: 0 $m/2;
+
+  padding: 0;
+  height: 0;
+  overflow: hidden;
+  &.shown-warning {
+    padding: $m * (3/2 + 1/2) $m/2 $m/2 $m/2;
+    height: auto;
+    margin-bottom: -$m * 3/2;
+  }
+}
+
 #toolbar {
-  height: $m * 5/4;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 
   z-index: 15;
@@ -86,13 +106,8 @@ body {
 
   display: flex;
   align-items: center;
-  padding: 0 $m / 2;
-
-  & > * {
-    & + * {
-      margin-left: 2rem;
-    }
-  }
+  padding: 0 $m/4;
+  height: $m * 3/2;
 
   color: white;
   font-family: "Courier New", Courier, monospace;
@@ -101,15 +116,12 @@ body {
   .form-control {
     display: flex;
     align-items: center;
-  }
-
-  .button-container {
-    flex-grow: 1;
-    text-align: right;
+    & + .form-control {
+      margin-left: $m/2;
+    }
   }
 
   .select-css {
-    margin-left: 0.5rem;
     display: block;
     font-family: "Courier New", Courier, monospace;
 
