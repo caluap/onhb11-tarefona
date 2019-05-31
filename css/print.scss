@@ -68,6 +68,22 @@ div {
   }
 
   .infini {
+    #page1 {
+      overflow: unset;
+      img {
+        position: relative;
+      }
+    }
+    #page2 {
+      .map {
+        img {
+          opacity: 0.6;
+        }
+        &:before {
+          display: none;
+        }
+      }
+    }
   }
 
   .syne {
