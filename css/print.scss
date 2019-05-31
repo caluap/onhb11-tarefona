@@ -1,0 +1,75 @@
+#there-be-no-saving-here {
+  display: none;
+}
+
+@page {
+  size: A4 landscape;
+}
+$mar: 5mm;
+body {
+  padding: $mar;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+#font-credits {
+  display: none;
+}
+
+#here-comes-treble {
+  $adj: 0.8;
+
+  .layout-template {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .spreads {
+    width: calc(297mm - #{$mar * 2});
+
+    margin: auto;
+    .pages {
+      &:nth-child(odd) {
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        border-right: 1px solid black;
+      }
+      &:nth-child(even) {
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        border-left: none;
+      }
+      -webkit-print-color-adjust: exact !important;
+      width: 100%;
+      height: 210mm - ($mar * 2);
+      &:after {
+        display: none;
+      }
+    }
+  }
+  #spread1,
+  #spread2 {
+    page-break-inside: avoid;
+  }
+
+  #spread2 {
+    margin-top: $mar;
+    page-break-before: always;
+    break-before: always;
+  }
+
+  #page3,
+  #page4 {
+    margin-top: $mar;
+  }
+
+  .jean-luc {
+  }
+
+  .infini {
+  }
+
+  .syne {
+  }
+}
