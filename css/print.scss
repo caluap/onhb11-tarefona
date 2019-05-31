@@ -13,6 +13,7 @@ body {
 $mar: 5mm;
 body {
   padding: $mar;
+  background: white;
 }
 
 div {
@@ -61,7 +62,7 @@ div {
   #spread1 {
   }
 
-  #spread2 {
+  #page3 {
     page-break-before: always;
     break-before: always;
   }
@@ -78,7 +79,10 @@ div {
     #page1 {
       overflow: unset;
       img {
-        position: relative;
+        position: static;
+        @supports (-moz-appearance: none) {
+          max-height: 205mm - ($mar * 2);
+        }
       }
     }
     #page2 {
