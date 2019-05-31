@@ -53,13 +53,15 @@ div {
       }
     }
   }
-  #spread1,
-  #spread2 {
+  .spreads,
+  .pages {
     page-break-inside: avoid;
   }
 
+  #spread1 {
+  }
+
   #spread2 {
-    margin-top: $mar;
     page-break-before: always;
     break-before: always;
   }
